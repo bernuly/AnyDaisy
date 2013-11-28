@@ -1,0 +1,14 @@
+Building
+--------
+
+cd extension
+ant clean jar
+
+Installing in Firefox
+---------------------
+
+File / open
+Browse to extension/dist
+Open daisy.1.N.N.YYYY.xpi
+Follow prompts
+

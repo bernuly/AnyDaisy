@@ -1,0 +1,56 @@
+<html 
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title/>
+<link rel="stylesheet" type="text/css" href="chrome://daisy-public/content/rendered.css"/>
+<script type="text/javascript">
+var myComponent = Components.classes['@benetech.org/daisy-helper'].createInstance().wrappedJSObject; 
+var helper = myComponent;
+
+function init() {
+   helper.init(window);
+   helper.writeContent();
+}
+
+function onHelp(anchor) {
+   helper.wrappedJSObject.showHelp(anchor);
+}
+</script>
+</head>
+<body onload="init()" onunload="helper.close();">
+   <div id="daisy-internal-content">
+   <div id="daisy-internal-controls" aria-live="off" role="toolbar">
+      <div id="daisy-internal-widgets">
+         <div id="daisy-internal-description" tabindex="2">AnyDaisy</div>
+         <span id="daisy-internal-page-widget">
+            <label for="daisy-internal-page-no" id="daisy-internal-page-description">
+               <a class="link" id="daisy-internal-page-link">Page</a>
+               <span id="daisy-internal-page-no-hidden"/>
+               <span id="daisy-internal-page-total"/>
+            </label>
+            <input tabindex="4" title="Enter the page number and press enter to change the page" size="3" id="daisy-internal-page-no"/>
+         </span>
+         <span id="daisy-internal-notes-widget">
+            <select tabindex="5" id="daisy-internal-notes" label="My Notes">
+               <option>My Notes</option>
+               <option value="id:add-note" class="operation">Add Note</option>
+            </select>
+            <button tabindex="6" accesskey="a" id="daisy-internal-add-note-button" title="Add Note"><img src="chrome://daisy-public/content/add-note-button.png"/></button>
+         </span>
+      </div>
+      <p id="daisy-internal-playback-widget">
+         <button tabindex="7" id="daisy-internal-prev-button" title="Previous"><img src="chrome://daisy-public/content/prev-button.png"/></button>
+         <button tabindex="8" id="daisy-internal-play-button" title="Play"><img src="chrome://daisy-public/content/play-button.png"/></button>
+         <button tabindex="9" id="daisy-internal-next-button" title="Next"><img src="chrome://daisy-public/content/next-button.png"/></button>
+      </p>
+      <p id="daisy-internal-no-playback">
+         No playback <a id="daisy-internal-no-playback-link" title="No playback available" href="javascript:onHelp('narration_modes');">[How to enable speech]</a>.
+      </p>
+   </div>
+   <div id="daisy-internal-book" tabindex="1" role="document"></div>
+   <div id="daisy-internal-loading"><h2>Loading</h2><div class="square"/></div>
+   <div id="daisy-internal-endspace"></div>
+   </div>
+</body>
+</html>

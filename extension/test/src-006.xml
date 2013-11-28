@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtbook xmlns="http://www.daisy.org/z3986/2005/dtbook/" version="2005-3">
+  <head>
+    <meta name="dc:Title" content="Test 005" />
+  </head>
+  <book>
+    <frontmatter>
+      <doctitle>Test 005</doctitle>
+      <docauthor>Developer</docauthor>
+    </frontmatter>
+    <bodymatter>
+      <level1>
+        <h1>Empty Page Numbers</h1>
+        <pagenum>1</pagenum>
+        <p>Page 1 content.</p>
+        <pagenum>2</pagenum>
+        <p>Page 2 content.</p>
+      </level1>
+      <level1>
+        <pagenum/>
+        <h1>Section with Bad Page Numbers</h1>
+        <p>Section with empty page number.</p>
+      </level1>
+      <level1>
+        <h1>Continuing with  Numbers</h1>
+        <pagenum>3</pagenum>
+        <p>Page 3 content.</p>
+        <pagenum>4</pagenum>
+        <p>Page 4 content.</p>
+      </level1>
+    </bodymatter>
+    <rearmatter>
+      <level1>
+        <pagenum/>
+        <h1>Rear Matter</h1>
+        <p>Rear matter with empty page number.</p>
+      </level1>
+      <level1>
+        <pagenum>A</pagenum>
+        <h1>Section with Page Number</h1>
+        <p>Rear matter with page number.</p>
+      </level1>
+    </rearmatter>
+  </book>
+</dtbook>
+

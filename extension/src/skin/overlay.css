@@ -1,0 +1,20 @@
+/* 
+    Document   : overlay
+    Created on : Feb 27, 2009, 4:40:37 PM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#daisy-sound-context {
+   height: 0px;
+   overflow: scroll;
+}
+
+#daisy-status-bar-valid {
+   display: none;
+}
+
+#daisy-status-bar-quirky {
+   display: none;
+}

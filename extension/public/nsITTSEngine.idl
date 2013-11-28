@@ -1,0 +1,41 @@
+#include "nsISupports.idl"
+
+interface nsITTSCallback;
+
+/**
+ * A particular TTS implemenation
+ */
+[scriptable, uuid(6e6a05b8-f1e8-44c5-8d3a-d2dad4f3ae5c)]
+interface nsITTSEngine : nsISupports
+{
+
+  /**
+   * The name of the engine
+   */
+  readonly attribute AString name;
+
+  /**
+   * Indicates whether the current engine is speaking
+   */
+  boolean isSpeaking();
+
+  /**
+   * Cancels any in progress speech
+   */
+  void cancel();
+
+  /**
+   * Starts speaking the text provided.
+   * @param text The text to speak.
+   * @param callback a callback for the speech
+   */
+  void speak(in AString text,in nsITTSCallback callback);
+
+  readonly attribute PRint32 minimumRate;
+  readonly attribute PRint32 normalRate;
+  readonly attribute PRint32 maximumRate;
+  readonly attribute AString rateUnit;
+
+  attribute PRint32 rate;
+
+};

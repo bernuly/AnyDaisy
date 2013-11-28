@@ -1,0 +1,17 @@
+/* 
+    Document   : filepicker
+    Created on : Apr 15, 2009, 1:01:08 PM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+treechildren::-moz-tree-image(directory) {
+   list-style-image: url(chrome://global/skin/tree/folder.png);
+   padding-right: 3px;
+}
+
+treechildren::-moz-tree-image(file) {
+   list-style-image: url(chrome://global/skin/icons/folder-item.png);
+   padding-right: 3px;
+}

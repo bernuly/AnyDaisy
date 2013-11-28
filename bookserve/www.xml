@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server xmlns="http://www.atomojo.org/Vocabulary/WebServer/2008/1/0">
+
+   <appdef name="bookserve" class="org.benetech.www.bookserve.BookServeApplication">
+      <library href="dist/bookserve.jar"/>
+   </appdef>
+   
+   <interface address="*" port="8080" secure="false">
+      <host name="*">
+         <app match="/" name="bookserve">
+            <parameter name="dir" href="test"/>
+         </app>
+      </host>
+   </interface>
+</server>

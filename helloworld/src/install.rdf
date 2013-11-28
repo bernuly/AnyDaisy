@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <RDF:Description RDF:about="urn:mozilla:install-manifest">
+  
+    <em:id>{462fe4d2-4b0b-47e0-bdb8-c6f535d85f5f}</em:id>
+    <em:name>HelloWorld</em:name>
+    <em:version>1.0</em:version>
+    <em:description>An Example Extension</em:description>
+    <em:creator>Benetech</em:creator>
+    <em:homepageURL>http://www.benetech.org/</em:homepageURL>
+    <em:aboutURL>chrome://helloworld/content/hello.xul</em:aboutURL>
+
+    <!-- firefox -->
+    <em:targetApplication>
+       <RDF:Description em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                    em:minVersion="1.5"
+                    em:maxVersion="3.1.*" />
+    </em:targetApplication>
+    <!-- flock -->
+    <em:targetApplication>
+       <RDF:Description em:id="{a463f10c-3994-11da-9945-000d60ca027b}"
+                     em:minVersion="0.1"
+                     em:maxVersion="1.0" />
+    </em:targetApplication>
+
+  </RDF:Description>
+
+</RDF:RDF>

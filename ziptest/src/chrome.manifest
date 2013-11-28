@@ -1,0 +1,7 @@
+content	ziptest	content/
+overlay	chrome://browser/content/browser.xul	chrome://ziptest/content/overlay.xul
+
+locale	ziptest	en-US	locale/en-US/
+
+skin	ziptest	classic/1.0	skin/
+

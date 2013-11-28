@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://daisyfox/skin/overlay.css" type="text/css"?>
+<overlay id="daisyfox-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+
+  <commandset id="mainCommandSet">
+    <command id="openHelloWorld" oncommand="HelloWorldOverlay.getInstance().show();"/>
+    <command id="openHelloWorldTransparent" oncommand="HelloWorldOverlay.getInstance().showTransparent();"/>
+  </commandset>
+
+  <menu id="menu_ToolsPopup">
+    <menuseparator/>
+    <menuitem label="Hello World" command="openHelloWorld" />
+    <menuitem label="Hello World - Transparent" command="openHelloWorldTransparent" />
+  </menu>
+
+</overlay>

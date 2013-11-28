@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtbook xmlns="http://www.daisy.org/z3986/2005/dtbook/" version="2005-3">
+  <head>
+    <meta name="dc:Title" content="Test 005" />
+  </head>
+  <book>
+    <frontmatter>
+      <doctitle>Test 005</doctitle>
+      <docauthor>Developer</docauthor>
+    </frontmatter>
+    <bodymatter>
+      <level1>
+        <h1>Page Numbers with Rear Matter</h1>
+        <pagenum>1</pagenum>
+        <p>Page 1 content.</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <pagenum>2</pagenum>
+        <p>Page 2 content.</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      </level1>
+    </bodymatter>
+    <rearmatter>
+      <level1>
+        <pagenum>A</pagenum>
+        <h1>Rear Matter</h1>
+        <p>Rear matter content.</p>
+      </level1>
+    </rearmatter>
+  </book>
+</dtbook>
+

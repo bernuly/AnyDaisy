@@ -1,0 +1,88 @@
+/* 
+    Document   : sidebar
+    Created on : Feb 6, 2009, 10:22:13 AM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#menu toolbarbutton:hover {
+   cursor: pointer;
+}
+
+#menu toolbarbutton {
+   padding: 0px;
+}
+
+#menu toolbarbutton .toolbarbutton-text {
+   display: none;
+}
+
+#menu > vbox {
+   min-height: 30px;
+}
+
+
+#menu .link {
+   text-decoration: underline;
+}
+
+#menu .link:hover {
+   cursor: pointer;
+}
+
+#menu .link .toolbarbutton-text {
+   display: -moz-box;
+}
+
+button {
+   -moz-user-focus: normal;
+}
+
+toolbarbutton:focus, tab:focus .tab-text {
+   border: 1px dotted grey;
+}
+
+treecols {
+   height: 0px;
+}
+
+#logo {
+   margin-right: 10px;
+   text-align: center;
+   color: rgb(19,41,164);
+   margin-bottom: 5px;
+}
+
+#logo image {
+   width: 158px;
+   height: 26px;
+}
+
+#document-title {
+   font-size: 1.2em;
+   margin-top: 0.2em;
+   margin-bottom: 0.3em;
+}
+
+#page-total {
+   -moz-user-focus: normal;
+}
+
+#page-line > label:focus {
+   border: 1px dotted grey;
+}
+
+treechildren::-moz-tree-cell-text(note) {
+   font-style: italic;
+}
+
+treechildren::-moz-tree-image(note) {
+   list-style-image: url(chrome://daisy/content/images/info-button.png) !important;
+   height: 18px;
+}
+
+#sidebar-box .tabs-closebutton {
+  display: none !important;
+}

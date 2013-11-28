@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Hello World" height="100" width="100" style="border: 1px solid white">
+<label value="Hello World" onclick="this.style.color='red'" onblur="this.style.color='black'" style="color: blue"/>
+</page>

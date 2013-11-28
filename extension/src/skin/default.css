@@ -1,0 +1,51 @@
+/* 
+    Document   : default
+    Created on : Jan 5, 2009, 1:40:25 PM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#controls {
+   min-width: 500px;
+   min-height: 200px;
+   overflow: scroll;
+}
+
+
+#controls #addbook {
+   min-width: 300px;
+}
+#controls label {
+   font-size: 0.9em;
+}
+
+button {
+   min-width: 0px;
+   min-height: 0px;
+   vertical-align: middle;
+}
+
+.button-box {
+   vertical-align: middle;
+   max-height: 1.1em;
+   font-size: 0.9em;
+   min-height: 0px;
+   min-width: 0px;
+   margin: 0px;
+   margin-top: 3px;
+   margin-bottom: 3px;
+   padding: 0px;
+}
+
+.button-box label {
+   min-height: 0px;
+   min-width: 0px;
+   margin: 0px;
+   padding: 0px;
+}
+
+row {
+   -moz-box-align: center;
+}
+

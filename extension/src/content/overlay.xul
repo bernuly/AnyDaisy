@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://daisy/skin/overlay.css" type="text/css"?>
+<?xul-overlay href="chrome://daisy/content/voicing-modes.xul"?>
+<overlay id="daisy-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript" src="chrome://daisy/content/overlay.js"/>
+  <script type="application/x-javascript" src="chrome://daisy/content/ZipDecoder.js"/>
+  <script type="application/x-javascript" src="chrome://daisy/content/Settings.js"/>
+  <script type="application/x-javascript" src="chrome://daisy/content/datadumper.js"/>
+  <script type="application/x-javascript" src="chrome://daisy/content/Sidebar.js"/>
+  <script type="application/x-javascript" src="chrome://daisy/content/FilePicker.js"/>
+  <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+  <script type="application/x-javascript">
+     DAISYOverlay.initialize();
+  </script>
+  <script type="application/x-javascript" src="chrome://daisy/content/FirstTime.js"/>
+
+  <menupopup id="menu_ToolsPopup">
+	<menu id="daisy-menu" label="AnyDaisy" insertafter="devToolsSeparator" accesskey="y" >
+		<menupopup id="daisy-menupopup">
+			<menuitem label="Open DAISY book..." key="key_openBookDialog" oncommand="Sidebar.getInstance().browseForFile()" />
+			<menu id="daisy-history-menu" label="Recently Opened Books" accesskey="r" onpopupshowing="DAISYOverlay.getInstance().createBooksMenu()">
+            <menupopup id="daisy-history-menu-popup" />
+			</menu>
+			<menu id="daisy-settings-menu" label="Settings" accesskey="s" >
+				<menupopup id="daisy-settings-menupopup">
+					<menuitem label="Voice Settings" accesskey="v" oncommand="DAISYOverlay.getInstance().onVoiceSettings()"/>
+					<menuitem label="Advanced Settings" accesskey="a" oncommand="DAISYOverlay.getInstance().onAdvancedSettings()"/>
+					<menuitem label="Audio Settings" accesskey="u" key="key_audioSettings" oncommand="DAISYOverlay.getInstance().onAudioSettings()"/>
+				</menupopup>
+			</menu>
+			<menu id="daisy-help-menu" label="Help" accesskey="h" >
+   			<menupopup id="daisy-help-menupopup">
+   				<menuitem label="Getting Started"  accesskey="g" key="key_openDaisyHelp" oncommand="Sidebar.getInstance().onHelp('getting_started')" />
+   				<menuitem label="Setting Up Your System" oncommand="Sidebar.getInstance().onHelp('setting_up_your_system')"/>
+   				<menuitem label="Reading A Book" oncommand="Sidebar.getInstance().onHelp('reading_a_book')"/>
+   				<menuitem label="Keyboard Navigation: AnyDaisy Features" oncommand="Sidebar.getInstance().onHelp('navigating_with_the_keyboard')"/>
+   				<menuitem label="Keyboard Navigation: Reading A Book" oncommand="Sidebar.getInstance().onHelp('keyboard_navigation')"/>
+   				<menuitem label="Keyboard Shortcuts Reference" oncommand="Sidebar.getInstance().onHelp('key_reference')"/>
+   				<menuitem label="Changing Settings" oncommand="Sidebar.getInstance().onHelp('settings')"/>
+   				<menuitem label="Get Help From Bookshare" oncommand="Sidebar.getInstance().onBookshare('contactUs')"/>
+   			</menupopup>
+			</menu>
+            <menuitem label="Leave Feedback" oncommand="Sidebar.getInstance().openFeedback()" />
+		</menupopup>
+	</menu>
+  </menupopup>
+
+  <!-- XXX: Duplicate of the Tools | Help menu above. just with a different label. -->
+  <menupopup id="menu_HelpPopup">
+	<menu id="daisy-help-menu2" label="AnyDaisy Help">
+		<menupopup id="daisy-help-menupopup2">
+			<menuitem label="Getting Started"  accesskey="g" key="key_openDaisyHelp" oncommand="Sidebar.getInstance().onHelp('getting_started')" />
+			<menuitem label="Setting Up Your System" oncommand="Sidebar.getInstance().onHelp('setting_up_your_system')"/>
+			<menuitem label="Reading A Book" oncommand="Sidebar.getInstance().onHelp('reading_a_book')"/>
+			<menuitem label="Keyboard Navigation: AnyDaisy Features" oncommand="Sidebar.getInstance().onHelp('navigating_with_the_keyboard')"/>
+			<menuitem label="Keyboard Navigation: Reading A Book" oncommand="Sidebar.getInstance().onHelp('keyboard_navigation')"/>
+			<menuitem label="Keyboard Shortcuts Reference" oncommand="Sidebar.getInstance().onHelp('key_reference')"/>
+			<menuitem label="Changing Settings" oncommand="Sidebar.getInstance().onHelp('settings')"/>
+			<menuitem label="Get Help From Bookshare" oncommand="Sidebar.getInstance().onBookshare('contactUs')"/>
+		</menupopup>
+	</menu>
+  </menupopup>
+  
+  <!-- Put the DAISY open menu in the main File menu as well as the Tools menu -->
+  <menupopup id="menu_FilePopup">
+   <menuitem label="Open DAISY book..." key="key_openBookDialog" 
+         oncommand="Sidebar.getInstance().browseForFile()"
+         insertafter="menu_openFile" />
+  </menupopup>
+  
+  <commandset id="mainCommandSet">
+    <command id="openDaisy" oncommand="DAISYOverlay.getInstance().show();"/>
+    <command id="moveToDaisyBook" oncommand="DAISYOverlay.getInstance().moveToBook();"/>
+  </commandset>
+  <keyset id="mainKeyset">
+    <key id="key_moveToDaisyBook"
+         keycode="VK_F3"
+         modifiers="alt,shift" command="moveToDaisyBook" />
+    <key id="key_openBookDialog"
+         key="o"
+         modifiers="alt" oncommand="Sidebar.getInstance().browseForFile()"/>
+    <key id="key_openDaisyHelp"
+         key="l"
+         modifiers="alt" oncommand="Sidebar.getInstance().onHelp('getting_started')"/>
+    <key id="key_audioSettings"
+         key="a"
+         modifiers="alt" oncommand="DAISYOverlay.getInstance().onAudioSettings()"/>
+  </keyset>
+
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="openDaisySidebar"
+      autoCheck="false"
+      label="AnyDaisy"
+      type="checkbox" group="sidebar"
+      sidebarurl="chrome://daisy/content/sidebar.xul"
+      sidebartitle="Table of Contents"
+      oncommand="DAISYOverlay.getInstance().toggleSidebar();"/>
+  </broadcasterset>
+
+  <statusbar id="status-bar">
+    <statusbarpanel id="daisy-status-bar-valid">
+       <image src="chrome://daisy/content/images/checkbox.gif"/><label value="DAISY Valid"/>
+    </statusbarpanel>
+    <statusbarpanel id="daisy-status-bar-quirky">
+       <image src="chrome://daisy/content/images/rescued.gif"/><label value="DAISY Not Valid"/>
+    </statusbarpanel>
+    <statusbarpanel id="daisy-status-button">
+      <toolbarbutton image="chrome://daisy/content/images/status-bar-icon-16x16.jpg" label="" tooltiptext="Open the AnyDaisy e-book reader" observes="openDaisySidebar"/>
+    </statusbarpanel>
+  </statusbar>
+
+ <vbox id="browser-bottombox">
+    <browser id="daisy-sound-context" flex="1" src="chrome://daisy/content/sound.xhtml" disablehistory="true" disablesecurity="true"/>
+ </vbox>
+</overlay>

@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtbook version="2005-3" xmlns="http://www.daisy.org/z3986/2005/dtbook/" xmlns:ns="http://www.daisy.org/z3986/2005/dtbook/">
+    <head>
+        <meta content="Help" name="dc:Title" />
+    </head>
+
+    <book>
+        <frontmatter>
+        </frontmatter>
+
+        <bodymatter>
+            <level1>
+		<pagenum>1</pagenum>
+                <h1>Welcome to <product-name xmlns=''/></h1>
+                <img src="chrome://daisy-public/content/anydaisy.jpg" alt="any daisy" />
+                <level2>
+                    <h2 id="getting_started" >Getting Started</h2>
+                    <p><product-name xmlns=''/> is an ebook reader with built in accessibility features. It allows you to open DAISY
+                        ebooks within Firefox, and have those books read out loud using either your screenreader or
+                        <product-name xmlns=''/>'s built in voicing features.</p>
+		    
+                    <level3>
+                        <h3 id="opening-book">Opening a Book</h3>
+                        <p>
+                            <list type="ul">
+                                <li>Select the Tools menu (Alt T)</li>
+                                <li>Choose <product-name xmlns=''/></li>
+                                <li>Select Open DAISY Book</li>
+                                <li>Browse to and select any ZIP or BKS2 file that contains a DAISY book, or select an
+                                    OPF from an uncompressed DAISY book</li>
+                                <li>If the book is password protected, <product-name xmlns=''/> will prompt you for the password</li>
+                            </list>
+                        </p>
+                    </level3>
+                    <level3>
+                        <h3>What kinds of books can <product-name xmlns=''/> read?</h3>
+                        <p><product-name xmlns=''/> is designed to read text only DAISY books, such as those from Bookshare, and DAISY
+                            books with text and audio. The current version does not play audio-only DAISY books; support
+                            for those will be including in an upcoming version.</p>
+                    </level3>
+                    <level3>
+                        <h3>Customer Support</h3>
+                        <p>
+                            If your question isn't answered by this manual, feel free to contact
+                            <a href="http://www.bookshare.org/contactUs">Bookshare's Customer Support</a>.
+                        </p>
+                    </level3>
+                </level2>
+
+                <level2>
+		    <pagenum>2</pagenum>
+                    <h2 id="setting_up_your_system" >Setting Up Your System</h2>
+
+                    <level3>
+                        <h3>Install Flash Plugin</h3>
+                        <p>You will need to have <a href="http://get.adobe.com/flashplayer/">Flash Player</a> installed 
+			and enabled. It's used to play back audio prompts and prerecorded audio. Text to speech will still
+			work if Flash is unavailable.</p>
+                    </level3>
+
+                    <level3>
+                        <h3 id="setting-up-speech">Setting Up Speech</h3>
+
+                        <p><product-name xmlns=''/> uses your computer's "text to speech" (TTS) capabilities to read DAISY books.
+                            Windows XP (SP2), Windows Vista, and Mac OS X Leopard (10.5) all have built-in speech
+                            synthesis. On a Linux computer you will need to install espeak.</p>
+
+                        <p>To test your TTS setup, open the "Voice Settings" dialog (Open the Tools menu, select
+                            <product-name xmlns=''/>, select Settings, and choose Voice Settings) and then press the "Test Voice"
+                            button. If you hear your computer speaking, then the TTS is working properly. Please
+                            <a href="http://www.bookshare.org/contactUs">contact us</a>
+                            if you are unable to proceed.
+                        </p>
+                    </level3>
+                </level2>
+		<pagenum>3</pagenum>
+                <level2>
+                    <h2 id="reading_a_book" >Reading A Book</h2>
+
+                    <p>If you prefer to let your screenreader do the talking, press Alt Shift F3 (to jump to the content
+                        of the book). You will now be able to navigate the book as if it was a web page.</p>
+
+                    <p>To have <product-name xmlns=''/> speak the book, press the play button (or press Alt Shift F3 to jump to the book's
+                        content, and press 'p' to start playback. It will begin reading from the top of the book. If you
+                        press 'p' or escape while the book is being read, <product-name xmlns=''/> will pause. Pressing 'p' again after
+                        that will resume from the same paragraph.</p>
+                </level2>
+		
+		<level2>
+		  <a name="narration_modes"/>
+		  <h2 id="narration_modes">Narration Modes</h2>
+		  
+		  <p><product-name xmlns=''/> has three Narration Modes, which control what it will read to you. These can be
+		  chosen using keyboard shortcuts, or from the "Audio Settings" dialog. These are as follows:</p>
+		  
+		  <level3>
+		      <a name="comprehensive_narration"/>
+		      <h3>Comprehensive Narration</h3>
+		      <p>In this mode, <product-name xmlns=''/> will read Firefox menus, Firefox tab names, the settings dialogs,
+		      as well as everything needed to navigate and read a book. This mode is great for reading on computers
+		      without a separate screenreader installed, or if you prefer to pause your screenreader when you 
+		      start up Firefox. You'll need to turn your screenreader back on if you wish to read web pages within
+		      Firefox, as <product-name xmlns=''/> does not yet provide that ability. To enable this mode, press <em>Alt Shift
+		      F10</em>.</p>
+		  </level3>
+		  <level3>
+		      <a name="book_nav_narration"/>
+		      <h3>Book and Navigation Narration</h3>
+		      <p>In this mode, <product-name xmlns=''/> will narrate only the book and the navigation controls for the book. To
+		      hear anything else in Firefox, you will need to re-enable your screenreader. This mode allows you to
+		      use <product-name xmlns=''/>'s navigation key shortcuts, and to interact with the DAISY book at a more detailed level
+		      than your screenreader probably supports. To enable this mode, press <em>Alt Shift F11</em>.</p>
+		  </level3>
+		  <level3>
+		      <a name="mute_narration"/>
+		      <h3>Mute</h3>
+		      <p><product-name xmlns=''/> can be completely silent if you prefer. This allows you to let your screenreader do the 
+		      talking, or to read books without narration. To mute <product-name xmlns=''/>'s narration, press <em>Alt Shift F12</em>.
+		      </p>
+		  </level3>
+		</level2> 
+		
+		<pagenum>4</pagenum>
+                <level2>		    
+		    <h2 id="navigating_with_the_keyboard">Navigating <product-name xmlns=''/>'s Interface With The Keyboard</h2>
+                    
+		    <p>There are three areas in the <product-name xmlns=''/> user interface: the table of contents (which is rendered as a sidebar),
+                    the navigation bar (which contains a control which allows you to skip to pages, and a notes menu),
+                    and the main book contents (which can be read by your screenreader like any regular web page, in Firefox.) 
+                    It's important to understand that <product-name xmlns=''/> is an extension within Firefox itself, and as such there are
+                    many core Firefox features that are outside of the scope of this manual. DAISY books are loaded as 
+                    individual tabs in Firefox; you can switch between tabs using the <em>Ctrl tab</em> key.                                                           
+                    </p>
+                    
+		    <p>If you are using your screenreader to read the contents of the book, these are the only controls you
+                    need to learn. If you will be using <product-name xmlns=''/>'s built in voicing, then you will want to read the 
+                    <a href="#keyboard_navigation">section describing navigation of a book</a> after this one.</p>
+                    <level3>
+                        <h3>The Table of Contents</h3>
+                        <p>The Table of Contents of the book or document is rendered as a tree in Firefox's sidebar. To move
+                        the focus to the Table of Contents, press <em>Alt Shift F1</em>. You will now be able to use the arrow keys 
+			to move through the contents; pressing enter on any heading will set the focus to the book's contents at
+                        that particular location.</p>                   
+                    </level3>
+                    <level3>
+                        <h3>The Navigation Bar</h3>
+                        <p>The Navigation Bar is an overlay at the top of the book's contents. It contains three controls:
+                        paging, notes, and playback buttons. You can press <em>Alt Shift F2</em> to jump to the navigation
+			bar, and then tab between the elements. Managing notes, and changing pages will be described in more 
+			detail later in this guide.</p>
+                        <level4>
+                            <h4>Playback Controls</h4>
+                            <p>On the right of the navigation bar are visual playback controls. You can tab to these and
+                            press space to select them, but there are keyboard shortcuts for control of playback which 
+                            you will find it more convenient to use. The following section will describe these in more
+                            depth.</p>                        
+                        </level4>
+                    </level3>
+		    <level3>
+		      <h3>The Book Contents</h3>
+		      <p>To jump to the book's contents, you can press <em>Alt Shift F3</em>. Many of <product-name xmlns=''/>'s navigation
+		      keys depend on you being focused on the book's contents directly.</p>
+		    </level3>
+                </level2>
+
+                <level2>
+		    <pagenum>5</pagenum>
+                    <a name="keyboard_navigation" />
+                    <h2 id="keyboard_navigation" >Navigating A Book With Your Keyboard</h2>
+
+                    <p><product-name xmlns=''/> has keyboard shortcuts which give you control over the playback of a book.</p>
+
+                    <level3>
+                        <h3>Next and Previous</h3>
+                        <p>You can skip between elements (e.g. paragraphs) in the book using the next (<em>ctrl /</em>) and
+                            previous (<em>ctrl ,</em>) keys. If you use these keys while <product-name xmlns=''/> is reading, it will pause
+                            after reading the element that you navigated to. You can then press 'p' again to resume
+                            playback, or press next or previous again. You can also use the <em>ctrl .</em> key to reread the 
+			    element at the current position.</p>
+                    </level3>
+
+                    <level3>
+                        <h3>Lists</h3>
+
+                        <p>When a list is read, <product-name xmlns=''/> will first announce "list", and then will speak each of the
+                            list items in turn. If the list is nested, the level is spoken before the list items are
+                            read. <product-name xmlns=''/> will announce "list complete".</p>
+
+                        <p>For example, try the following list with playback or keyboard navigation.</p>
+
+                        <list type="ul">
+                            <li>A</li>
+                            <li>
+                                <p>B</p>
+                                <list type="ol">
+                                    <li>First</li>
+                                    <li>
+                                        <p>Middle</p>
+                                        <list type="ol">
+                                            <li>apple</li>
+                                            <li>orange</li>
+                                            <li>peach</li>
+                                        </list>
+                                    </li>
+                                    <li>Last</li>
+                                </list>
+                            </li>
+                            <li>C</li>
+                        </list>
+                    </level3>
+
+                    <level3>
+                        <h3>Sidebars</h3>
+                        <p>A sidebar is presented as a box with text or images inside it. <product-name xmlns=''/> will announce
+                            "sidebar" when it encounters one during narration, and then continue to read the contents of
+                            it. Following is an example.</p>
+
+                        <sidebar>
+                            <hd>Example</hd>
+
+                            <p>Sidebars are related content. Often you'll see them contain extra information like
+                                diagrams, related articles, or biographies.</p>
+                        </sidebar>
+
+                        <p>Content often continues "after" a sidebar.</p>
+                    </level3>
+
+                    <level3>
+		    <pagenum>6</pagenum>
+                        <h3>Tables</h3>
+
+                        <p>When you encounter a table in during playback, <product-name xmlns=''/> automatically pauses. Within a table
+                            you can use the table navigation keystrokes (<em>ctrl with arrow keys</em>) to move around the table;
+                            if you hit one of the table edges, you will hear a system bell. The keyboard shortcut 
+			    <em>ctrl .</em> will read the cell that you are currently on, if you'd like to hear it again.
+			    If you wish to have the table read to you cell by cell, just press play, and <product-name xmlns=''/> will 
+			    resume reading. If you wish to skip the table completely, you can press <em>escape</em>.</p>
+
+                        <p>Try the keyboard navigation or playback on the following simple table.</p>
+
+                        <table>
+                            <tr>
+                                <th>Team</th>
+                                <th>Location</th>
+                            </tr>
+
+                            <tr>
+                                <td>San Francisco Giants</td>
+                                <td>AT&amp;T Park</td>
+                            </tr>
+
+                            <tr>
+                                <td>Oakland Athletics</td>
+                                <td>Oakland-Alameda County Coliseum</td>
+                            </tr>
+
+                            <tr>
+                                <td>Los Angeles Dodgers</td>
+                                <td>Dodger Stadium</td>
+                            </tr>
+                        </table>
+
+                        <p>When a table has cells with more complicated content, the cell is announced to have "multiple
+                            items" and you can navigate the cell's content. For example, here are the same teams with
+                            more details:</p>
+
+                        <table>
+                            <tr>
+                                <th>Team</th>
+                                <th>Information</th>
+                            </tr>
+
+                            <tr>
+                                <td>San Francisco Giants</td>
+                                <td>
+                                    <list type="ul">
+                                        <li>Stadium: AT&amp;T Park</li>
+                                        <li>Location: 24 Willie Mays Plaza, San Francisco, CA
+                                            94107</li>
+                                        <li>League: National</li>
+                                    </list>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Oakland Athletics</td>
+                                <td>
+                                    <list type="ul">
+                                        <li>Oakland-Alameda County Coliseum</li>
+                                        <li>7000 Coliseum Way, Oakland, CA 94621</li>
+                                        <li>League: American</li>
+                                    </list>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Los Angeles Dodgers</td>
+                                <td>
+                                    <list type="ul">
+                                        <li>Dodger Stadium</li>
+                                        <li>1000 Elysian Park Avenue, Los Angeles, CA
+                                            90012-1199</li>
+                                        <li>League: National</li>
+                                    </list>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p>Sometimes tables have headers, footers and captions. Playback will read the table's caption
+                            and position you on the table's body. You can try this with the following example table:</p>
+
+                        <table>
+                            <caption>A Complex Table</caption>
+
+                            <thead>
+                                <tr>
+                                    <th>Column A</th>
+                                    <th>Column B</th>
+                                    <th>Column C</th>
+                                </tr>
+                            </thead>
+
+                            <tfoot>
+                                <tr>
+                                    <th>Footer A</th>
+                                    <th>Footer B</th>
+                                    <th>Footer C</th>
+                                </tr>
+                            </tfoot>
+
+                            <tbody>
+                                <tr>
+                                    <td>A1</td>
+                                    <td>B1</td>
+                                    <td>C1</td>
+                                </tr>
+
+                                <tr>
+                                    <td>A2</td>
+                                    <td>B2</td>
+                                    <td>C2</td>
+                                </tr>
+
+                                <tr>
+                                    <td>A3</td>
+                                    <td>B3</td>
+                                    <td>C3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </level3>
+	      </level2>
+	      
+	      <level2>
+		<pagenum>7</pagenum>
+		    <h2>How to Use Notes</h2>
+		    <p><product-name xmlns=''/> allows you to take notes as you are reading. Notes are displayed inside a box 
+		    with an icon to differentiate them from the main text in the book. When <product-name xmlns=''/> is narrating
+		    the book to you, a note will be announced as "Note", and then read to you.</p>
+		    
+		    <p>To create a note, either choose "Add Note" from the "My Notes" menu on the action bar, 
+		    click the (+) icon on the action bar, or press <em>ctrl i</em>. You will be asked to enter a name
+		    for a note, and then the note itself. <product-name xmlns=''/> will automatically generate a name based on the note's
+		    location within the book, but you don't	need to use its suggestion.</p>
+		    
+		    <p>Once a note is created, it will appear in three places: the book text, the table of contents, 
+		    and the "My Notes" menu. Choosing a note from the "My Notes" menu or the table of contents will 
+		    navigate directly to the note within the book. If you want to delete or change a note, you can do 
+		    so by choosing the "Manage Notes" option from the "My Notes" menu.</p>
+		    
+		    <p>You can quickly skip between notes in a book using the keyboard; <em>ctrl alt [</em> and 
+		    <em>ctrl alt ]</em> will step between the previous and next notes.</p>
+                </level2>
+
+		<level2>
+		  <h2>Changing Page</h2>
+		  <p>You probably noticed that this user guide has page numbers. As you navigate the book, the
+		  action bar will change to show you which page you are currently on. To navigate back and forwards by page,
+		  use the keyboard shortcuts <em>alt ctrl ;</em> and <em>alt ctrl '</em>. Alternatively, you can 
+		  jump to the navigation bar (<em>alt shift F2</em>), and tab once to hear the current page. If you type
+		  a new page number and press enter, <product-name xmlns=''/> will jump to the new page.</p>			  
+		</level2>
+		<pagenum>8</pagenum>
+		
+		<level2>
+		  <h2 id="settings">Settings</h2>
+		  <p><product-name xmlns=''/> has three settings dialogs, all of which can be invoked from the Tools / <product-name xmlns=''/> / Settings
+		  menu.</p>
+		  
+		  <level3>
+		    <h3 id="voice_settings">Voice Settings</h3>
+		    <p>This allows you to choose the speech rate and length of pause.</p>
+		    
+		    <p><strong>Speech Rate</strong> changes the speed of <product-name xmlns=''/>'s narration. You can also control the 
+		    speech rate via keyboard shortcuts, using <em>alt pageup</em> to increase and <em>alt pagedown</em> to
+		    decrease the speed of the voice.</p>
+		    
+		    <p>Use the Preview button to hear how the new settings sound. If you're satisfied, press Save. If you
+		    want to revert to how they were, press Cancel to close the dialog without saving.</p>
+		    
+		    <p><product-name xmlns=''/> currently will use the default voice on your computer. In Windows, this can be changed
+		    from the SAPI settings screen in the control panel. In OSX, changing the VoiceOver settings will change
+		    the voice used. Under Linux, you cannot currently change ESpeak's default voice. Future versions of 
+		    <product-name xmlns=''/> will offer more control of which voice is used on all platforms.</p>		    
+		  </level3>
+		  
+		  <level3>
+		    <h3 id="audio_settings">Audio Settings</h3>
+		    <p>This allows you to control <product-name xmlns=''/>'s audio prompts.</p>
+		    <p><strong>Voicing Mode</strong> allows you to choose which <a href="#narration_modes">Narration Mode</a> to use.</p>
+		    <p>When <strong>Play Sound When <product-name xmlns=''/> Launches</strong> is enabled, <product-name xmlns=''/> will play an audio tone
+		    when it first launches.</p>
+		    <p>When <strong>Play Sound When Moving Between Navigation Areas</strong> is enabled, <product-name xmlns=''/> will play
+		    different audio tones when you toggle between the Table of Contents, Navigation Bar, and Book.</p>
+		  </level3>
+		  
+		  <level3> 
+		    <h3 id="advanced_settings">Advanced Settings</h3>
+		    <p>These settings allow you to control aspects of how <product-name xmlns=''/> displays books.</p>
+		    
+		    <p>When <strong>Show Images When Displaying Books</strong> is enabled, images will be loaded as you
+		    navigate through the book. If necessary, you can speed up the loading and overall navigation of books by turning 
+		    this feature off.</p>
+		    <p><strong>Use Prerecorded Narration When Available</strong> allows you to use human narration if supplied with
+		    the DAISY book. If you turn this option off, <product-name xmlns=''/> will use your Narration Mode settings to determine
+		    whether or not to use text to speech.</p>
+		    <p><strong>Enable Quirks Mode</strong> is a setting for content producers. If you turn this option off,
+		    <product-name xmlns=''/> will only load strictly correct DAISY content. In future versions, this setting will be expanded
+		    to do more validation; currently, it toggles strict validation of certain namespaces.</p>
+		  </level3>		  
+		</level2>  
+		
+                <level2>
+		    <pagenum>9</pagenum>
+                    <h2 id="key_reference">Key Reference</h2>
+
+		    <level3>
+			<h3>General Keys</h3>
+			<p>These keys are usable in all narration modes.</p>
+			<table>
+				<thead>
+				    <th>
+					<td>Key Combination</td>
+					<td>Action</td>
+				    </th>  
+				</thead>
+				<tr>
+					<td>Ctrl-alt-o</td>
+					<td>Open DAISY book (in OS X, cmd-alt-o)</td>
+				</tr>
+				<tr>
+					<td>Shift-alt-f1</td>
+					<td>Jump to table of contents</td>
+				</tr>
+				<tr>
+					<td>Shift-alt-f2</td>
+					<td>Jump to action bar</td>
+				</tr>
+				<tr>
+					<td>Shift-alt-f3</td>
+					<td>Jump to book contents</td>
+				</tr>
+				<tr>
+					<td>Shift-alt-f10</td>
+					<td>Comprehensive voicing (global to Firefox)</td>
+				</tr>
+				<tr>
+					<td>Shift-alt-f11</td>
+					<td>Book and Navigation voicing (global to Firefox)</td>
+				</tr>
+				<tr>
+					<td>Shift-alt-f12</td>
+					<td>Mute all voicing (global to Firefox)</td>
+				</tr>
+			</table>
+		    </level3>
+		    <level3>
+			<h3>Basic Navigation</h3>
+			<p>These keys are designed to work with <a href="#comprehensive_narration">Comprehensive</a> 
+			and <a href="#book_nav_narration">Book and Navigation</a> narration modes.</p>
+
+			<table>
+				<thead>
+				    <th>
+					<td>Key Combination</td>
+					<td>Action</td>
+				    </th>  
+				</thead>
+				<tr>
+					<td>p</td>
+					<td>Toggle playback </td>
+				</tr>
+				<tr>
+					<td>Ctrl-,</td>
+					<td>Play previous</td>
+				</tr>
+				<tr>
+					<td>Ctrl-.</td>
+					<td>Play current</td>
+				</tr>
+				<tr>
+					<td>Ctrl-/</td>
+					<td>Play next</td>
+				</tr>
+				<tr>
+					<td>Escape</td>
+					<td>Exits current element (list, table, paragraph); if playback is enabled, begin playing next element</td>
+				</tr>
+			</table>
+		    </level3>
+		    <level3>
+			<h3>Advanced Navigation</h3>
+			<p>These keys are designed to work with <a href="#comprehensive_narration">Comprehensive</a> 
+			and <a href="#book_nav_narration">Book and Navigation</a> narration modes.</p>
+
+			<table>
+				<thead>
+				    <th>
+					<td>Key Combination</td>
+					<td>Action</td>
+				    </th>  
+				</thead>
+				<tr>
+					<td>Alt-ctrl-,</td>
+					<td>Move to previous section and read heading</td>
+				</tr>
+				<tr>
+					<td>Alt-ctrl-/</td>
+					<td>Move to next section and read heading</td>
+				</tr>
+				<tr>
+					<td>Alt-ctrl-;</td>
+					<td>Move to previous page</td>
+				</tr>
+				<tr>
+					<td>Alt-ctrl-'</td>
+					<td>Move to next page</td>
+				</tr>
+				<tr>
+					<td>Ctrl-up</td>
+					<td>Moves to the table cell above the current table cell.</td>
+				</tr>
+				<tr>
+					<td>Ctrl-down</td>
+					<td>Moves to the table cell below the current table cell.</td>
+				</tr>
+				<tr>
+					<td>Ctrl-left</td>
+					<td>Moves to the previous table cell in the same table row.</td>
+				</tr>
+				<tr>
+					<td>Ctrl-right</td>
+					<td>Moves to the next table cell in the same table row.</td>
+				</tr>
+			</table>
+		    </level3>
+		    <level3>
+			<h3>Notes Shortcuts</h3>
+			<p>These keys are designed to work with <a href="#comprehensive_narration">Comprehensive</a> 
+			and <a href="#book_nav_narration">Book and Navigation</a> narration modes.</p>
+			<table>	
+				<thead>
+				    <th>
+					<td>Key Combination</td>
+					<td>Action</td>
+				    </th>  
+				</thead>
+				<tr>
+					<td>Ctrl-alt-[</td>
+					<td>Previous note</td>
+				</tr>
+				<tr>
+					<td>Ctrl-alt-]</td>
+					<td>Next note</td>
+				</tr>
+				<tr>
+					<td>Ctrl-alt-i</td>
+					<td>Insert a note</td>
+				</tr>
+			</table>
+		    </level3>
+		    <level3>
+			<h3>Voice Speed</h3>
+			<p>These keys are designed to work with <a href="#comprehensive_narration">Comprehensive</a> 
+			and <a href="#book_nav_narration">Book and Navigation</a> narration modes.</p>
+
+			<table>					
+				<thead>
+				    <th>
+					<td>Key Combination</td>
+					<td>Action</td>
+				    </th>  
+				</thead>
+				<tr>
+					<td>Alt-pageup</td>
+					<td>Increase speed of speech</td>
+				</tr>
+				<tr>
+					<td>Alt-pagedown</td>
+					<td>Decrease speed of speech</td>
+				</tr>
+			</table>
+		    </level3>
+                </level2>    
+            </level1>
+        </bodymatter>
+    </book>
+</dtbook>

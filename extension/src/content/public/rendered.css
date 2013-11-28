@@ -1,0 +1,512 @@
+/* 
+    Document   : rendered
+    Created on : Jan 16, 2009, 3:41:56 PM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@namespace m "http://www.w3.org/1998/Math/MathML";
+
+body {
+   font-family: Arial;
+   margin: 0px;
+   padding: 0px;
+   width: 100%;
+   height: 100%;
+   /*color: white;*/
+}
+
+#daisy-internal-content {
+   min-width: 600px;
+}
+
+#daisy-internal-loading {
+   padding: 0px;
+   margin-top: 150px;
+   margin-bottom: 150px;
+   margin-left: 25%;
+   border: 1px solid rgb(50,50,50);
+   text-align: center;
+   width: 50%;
+   height: 50px;
+   overflow: hidden;
+}
+
+#daisy-internal-loading h2 {
+   padding: 0px;
+   margin: 0px;
+   margin-top: 15px;
+   font-size: 20px;
+   text-align: center;
+   z-index: 10;
+   height: 50px;
+}
+#daisy-internal-loading .square {
+   position: relative;
+   top: -65px;
+   left: 0px;
+   z-index: -1;
+   height: 50px;
+   width: 50px;
+   padding: 0px;
+   margin: 0px;
+   background-color: rgb(107,142,35);
+}
+#daisy-internal-book {
+   margin: 0px;
+   margin-left: 5px;
+   padding: 5px;
+   height: 100%;
+   width: 97%;
+   border: none;
+}
+
+#daisy-internal-endspace {
+   height: 400px;
+   background-color: rgb(230,230,230);
+}
+
+/* Top action bar */
+#daisy-internal-controls {
+   -moz-user-focus: normal;
+   background-color: rgb(255,236,178);
+   width: 100%;
+   min-width: 600px;
+   font-size: 0.9em;
+   position: fixed;
+   padding: 0px;
+   padding-left: 10px;
+   padding-bottom: 5px;
+   margin: 0px;
+   opacity: 0.90;
+}
+#daisy-internal-controls > p {
+   padding: 0px;
+   margin: 0px;
+}
+
+#daisy-internal-controls #manage-notes {
+   border-bottom: 1px solid gray;
+}
+#daisy-internal-controls option.operation {
+   font-style: italic;
+}
+
+#daisy-internal-controls a {
+   border: 1px solid transparent;
+}
+#daisy-internal-controls a:focus {
+   border: 1px dotted black;
+}
+
+#daisy-internal-controls .link {
+   text-decoration: underline;
+}
+#daisy-internal-controls .link:hover {
+   cursor: pointer;
+}
+
+#daisy-internal-controls #daisy-internal-widgets {
+   float: left;
+   height: 25px;
+}
+
+#daisy-internal-controls #daisy-internal-notes-label, 
+#daisy-internal-controls #daisy-internal-page-link,  
+#daisy-internal-controls #daisy-internal-page-total,
+#daisy-internal-controls #daisy-internal-description,
+#daisy-internal-controls #daisy-internal-page-widget #daisy-internal-page-description 
+ {
+   -moz-user-focus: normal;
+}
+
+#daisy-internal-controls #daisy-internal-description {
+   display: inline-block;
+   position: relative;
+   top: -10px;
+   padding-right: 2em;
+}
+
+#daisy-internal-controls #daisy-internal-page-widget {
+   display: inline-block !important;
+   position: relative;
+   top: -10px;
+   width: 10em;
+}
+
+#daisy-internal-controls #daisy-internal-notes-widget {
+   display: inline;
+   padding-left: 2em;
+}
+
+#daisy-internal-controls #daisy-internal-notes-widget #daisy-internal-notes {
+   position: relative;
+   top: -10px;
+   width: 20em;
+   max-width: 200px;
+   margin: 0px;
+}
+
+#daisy-internal-controls #daisy-internal-page-widget #daisy-internal-page-link {
+}
+
+#daisy-internal-controls #daisy-internal-page-widget #daisy-internal-page-total {
+   position: relative;
+   left: 2.5em;
+}
+#daisy-internal-controls #daisy-internal-page-widget #daisy-internal-page-no {
+   position: absolute;
+   left: 3.6em;
+}
+
+#daisy-internal-controls #daisy-internal-page-widget #daisy-internal-page-no-hidden {
+}
+
+#daisy-internal-controls #daisy-internal-playback-widget {
+   padding: 0px;
+   margin: 0px;
+   width: 145px;
+   float: right;
+   height: 30px;
+}
+
+#daisy-internal-controls #daisy-internal-no-playback {
+   display: none;
+   padding: 0px;
+   margin: 0px;
+   width: 145px;
+   float: right;
+   height: 30px;
+}
+
+
+#daisy-internal-controls button {
+   background-color: transparent;
+   border: none;
+   padding: 0px;
+   margin: 0px;
+   width: 30px;
+   height: 30px;
+   cursor: pointer;
+}
+
+#daisy-internal-controls img {
+   position: relative; 
+   padding: 0px;
+   margin: 0px;
+   width: 30px;
+   height: 30px;
+   top: -1px;
+   left: -3px;
+}
+
+#daisy-internal-controls #navMap {
+   min-width: 30em;
+}
+#daisy-internal-controls .level-0 {
+   font-weight: bold;
+}
+
+#daisy-internal-controls .level-1 {
+   padding-left: 1.5em;
+}
+#daisy-internal-controls .level-2 {
+   padding-left: 3em;
+}
+#daisy-internal-controls .level-3 {
+   padding-left: 4.5em;
+}
+#daisy-internal-controls .level-4 {
+   padding-left: 6em;
+}
+#daisy-internal-controls .level-5 {
+   padding-left: 7.5em;
+}
+#daisy-internal-controls .level-6 {
+   padding-left: 9em;
+}
+#sound {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   border: none;
+   margin: 0px;
+   padding: 0px;
+   height: 0px;
+   width: 0px;
+}
+
+.error {
+   margin-left: 1em;
+   color: red;
+   font-weight: bold;
+   font-size: 1.2em;
+}
+
+/* daisy */
+
+.daisy-pagenum {
+   clear: both;
+   margin-top: 2em;
+   border-top: 1px solid rgb(200,200,200);
+   text-align: right;
+   padding-top: 10px;
+   padding-right: 3em;
+   font-size: 0.9em;
+}
+
+/* DFX-438: Adding padding to the top to avoid text being obscured by action bar (#daisy-internal-widgets)*/
+.daisy-book {
+   margin-top: 50px;
+   margin-bottom: 300px;
+}
+
+.daisy-book h1 {
+   clear: both;
+   border-bottom: 1px solid rgb(130,130,130);
+}
+
+.daisy-book > h1 {
+   text-align: center;
+   font-size: 3em;
+   border: none;
+}
+
+.daisy-book > h2 {
+   text-align: center;
+   font-size: 1.5em;
+   border: none;
+}
+
+.daisy-closer {
+   float: right;
+   border: 1px solid rgb(200,200,200);
+   padding: 2px;
+   margin-right: 2px;
+   margin-top: 2px;
+   font-size: 10px;
+}
+
+.daisy-closer:hover {
+   cursor: pointer;
+}
+.daisy-imggroup {
+   clear: both;
+   margin-left: 2em;
+   width: auto;
+   /*text-align: center;*/
+   border: 1px solid rgb(200,200,200);
+   padding: 1em;
+}
+
+.daisy-imggroup .daisy-caption {
+   font-style: italic;
+   text-align: center;
+}
+
+.daisy-page {
+   border: 1px solid rgb(200,200,200);
+   padding: 10px;
+   margin-bottom: 2em;
+   clear: both;
+}
+
+.daisy-sidebar {
+   clear: both;
+   float: left;
+   /*
+   width: 30%;
+   overflow-x: scroll;
+   */
+   padding: 1em;
+   margin-left: 1em;
+   margin-right: 2em;
+   margin-top: 2em;
+   margin-bottom: 3em;
+   border: 1px solid rgb(200,200,200);
+}
+
+.daisy-sidebar .daisy-sidebar {
+   width: auto;
+   float:none;
+   overflow-x: visible;
+}
+
+.daisy-annotation {
+   border: 1px solid rgb(200,200,200);
+   padding-left: 1em;
+   background-color: rgb(255,255,255);
+}
+
+.daisy-user-note {
+   /*
+   clear: both;
+   float: left;
+   width: 30%;
+   overflow-x: scroll;
+   */
+   padding-left: 1em;
+   padding-right: 1em;
+   /*
+   margin-left: 2em;
+   margin-right: 2em;
+   margin-top: 2em;
+   margin-bottom: 2em;
+   */
+}
+
+.daisy-note {
+   padding-left: 1em;
+   padding-right: 1em;
+   border: 1px solid rgb(200,200,200);
+}
+
+.daisy-user-note-ref {
+   margin: 1em;
+   border: 1px solid rgb(200,200,200);
+}
+
+.daisy-user-note-ref img {
+   height: 30px;
+   border: none;
+   text-decoration: none;
+   vertical-align: middle;
+}
+
+.daisy-note h2, .daisy-user-note h2 {
+   font-size: 1em;
+}
+
+.daisy-note-ref span, .daisy-user-note-ref span {
+   font-weight: bold;
+}
+
+.daisy-level1, .daisy-level2, .daisy-level3, .daisy-level4, .daisy-level5 {
+}
+
+.daisy-hd {
+   font-weight: bold;
+   font-size: 1.2em;
+}
+
+.daisy-bridgehead {
+   margin-left: 0px;
+   margin-bottom: 1.5em;
+   width: 100%;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   padding-left: 5px;
+   padding-right: 5px;
+   background-color: rgb(70,70,70);
+   color: rgb(255,255,255);
+}
+
+.daisy-epigraph {
+   padding: 1.5em;
+   font-style: italic;
+}
+
+.daisy-byline {
+   text-align: center;
+}
+
+.daisy-dateline {
+   text-align: center;
+}
+
+.daisy-linegroup {
+   margin-bottom: 2em;
+}
+
+.daisy-poem {
+   padding-left: 2em;
+}
+
+.daisy-poem .daisy-title, .daisy-poem .daisy-author, .daisy-poem .daisy-hd {
+   text-align: center;
+}
+
+pre {
+   margin-left: 2em;
+   margin-right: 2em;
+   padding-left: 1em;
+   border: 1px solid rgb(130,130,130);
+   background-color: rgb(240,240,240);
+}
+
+div > m|math {
+   display: block;
+   padding-left: 2em;
+}
+
+table[border] {
+   border: 1px solid rgb(75,75,75);
+   border-spacing: 0;
+   border-collapse: collapse;
+}
+
+table[border] td {
+   border: 1px solid rgb(75,75,75);
+}
+
+table td {
+   padding: 0.2em;
+}
+
+table td p {
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
+}
+
+.daisy-highlight {
+   background-color: rgb(255,255,100);
+}
+
+.daisy-position-highlight {
+   background-color: rgb(236,242,245);
+}
+
+img.daisy-highlight {
+   padding: 10px;
+}
+
+img {
+   padding: 10px;
+}
+
+
+#soundmanager-debug {
+   display: none;
+}
+#soundmanager-debug-toggle {
+   display: none;
+}
+
+.daisy-current-context-word {
+   background: rgb(100,255,100);
+}
+
+.daisy-hidden {
+   display: none;
+}
+
+.daisy-li-entry {
+   clear: both;
+   float: left;
+   width: 30em;
+}
+
+.daisy-li-page {
+   margin-left: 2em;
+   float: left;
+   width:auto;
+}
+
+p > img {
+   vertical-align: middle;
+}
+
+div {
+   clear: left;
+}
+

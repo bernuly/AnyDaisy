@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/settings.css" type="text/css"?>
+<?xul-overlay href="chrome://daisy/content/voicing-modes.xul"?>
+<window id="settings" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Voice Settings"
+   orientation="vertical"
+   class="settings"
+   xmlns:h="http://www.w3.org/1999/xhtml" onload="ChangeSettings.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/ChangeSettings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Sidebar.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+<keyset>
+   <key keycode="VK_RETURN" oncommand="ChangeSettings.getInstance().onApplyVoiceSettings()"/>
+   <key keycode="VK_ENTER" oncommand="ChangeSettings.getInstance().onApplyVoiceSettings()"/>
+   <key keycode="VK_ESCAPE" oncommand="window.close()"/>
+   <key modifiers="meta" key="W" oncommand="window.close()"/>
+</keyset>
+<description value="These settings allow you to make adjustments to AnyDaisy's voice." 
+   id="voice-settings-description"
+   class="settings-description"
+   tabindex="1" />
+   <vbox>
+      <hbox align="center">
+        <label value="Speech Rate: " control="speech-rate"/>
+         <menulist id="speech-rate" tooltiptext="Speech Rate" tabindex="2">
+            <menupopup id="speech-rate-popup">
+            </menupopup>
+         </menulist>
+      </hbox>
+      <hbox align="center">
+         <label value="Between Pause: " control="playback-pause-time"/>
+         <menulist id="playback-pause-time" tooltiptext="Playback pause time" tabindex="3">
+            <menupopup>
+               <menuitem label="3.5 seconds" value="3.5" />
+               <menuitem label="3 seconds" value="3" />
+               <menuitem label="2.5 seconds" value="2.5" />
+               <menuitem label="2 seconds" value="2" />
+               <menuitem label="1.5 seconds" value="1.5" />
+               <menuitem label="1.4 seconds" value="1.4" />
+               <menuitem label="1.3 seconds" value="1.3" />
+               <menuitem label="1.2 seconds" value="1.2" />
+               <menuitem label="1.1 seconds" value="1.1" />
+               <menuitem label="1 second" value="1" />
+               <menuitem label="0.9 seconds" value="0.9" />
+               <menuitem label="0.8 seconds" value="0.8" />
+               <menuitem label="0.7 seconds" value="0.7" />
+               <menuitem label="0.6 seconds" value="0.6" />
+               <menuitem label="0.5 seconds" value="0.5" />
+               <menuitem label="0.4 seconds" value="0.4" />
+               <menuitem label="0.3 seconds" value="0.3" />
+               <menuitem label="0.2 seconds" value="0.2" />
+               <menuitem label="0.1 seconds" value="0.1" />
+            </menupopup>
+         </menulist>
+      </hbox>
+   </vbox>
+   <hbox>
+      <button label="Help" tabindex="4" oncommand="Sidebar.getInstance().onHelp('voice_settings')"/>
+      <spacer flex="2"/>
+      <button label="Preview" tabindex="5" oncommand="ChangeSettings.getInstance().testTTS()"/>
+      <button label="Save" tabindex="6" oncommand="ChangeSettings.getInstance().onApplyVoiceSettings()"/>
+      <button label="Cancel" tabindex="7" oncommand="ChangeSettings.getInstance().onCancel()"/>
+   </hbox>
+</window>

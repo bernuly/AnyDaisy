@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="helloworld" default="all" basedir=".">
+    <description>Builds, tests, and runs the project hello world Extension.</description>
+    <property name="dist.dir" location="."/>
+    <property name="src.dir" location="src"/>
+    <target name="all" depends="make-xpi"/>
+    <target name="make-xpi">
+      <delete>
+          <fileset dir="${dist.dir}" includes="*.xpi"/>
+      </delete>
+      <zip destfile="${dist.dir}/helloworld.xpi" basedir="${src.dir}"/>
+    </target>
+</project>

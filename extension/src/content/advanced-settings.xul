@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/settings.css" type="text/css"?>
+<?xul-overlay href="chrome://daisy/content/voicing-modes.xul"?>
+<window id="settings" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Advanced Settings"
+   orientation="vertical"
+   class="settings"
+   xmlns:h="http://www.w3.org/1999/xhtml" onload="ChangeSettings.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Sidebar.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/ChangeSettings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+<keyset>
+   <key keycode="VK_RETURN" oncommand="ChangeSettings.getInstance().onApplyAdvancedSettings()"/>
+   <key keycode="VK_ENTER" oncommand="ChangeSettings.getInstance().onApplyAdvancedSettings()"/>
+   <key keycode="VK_ESCAPE" oncommand="window.close()"/>
+   <key modifiers="meta" key="W" oncommand="window.close()"/>
+</keyset>
+<description value="These settings allow you to fine tune how AnyDaisy displays and loads books." 
+   id="advanced-settings-description"
+   class="settings-description"
+   tabindex="1" />
+   <vbox>
+      <checkbox class="settings-checkbox" label="Show Images When Displaying Books." checked="true" id="show-images-checkbox" tabindex="2"/>
+      <checkbox class="settings-checkbox" label="Use Pre-Recorded Narration When Available. Turn this off if you'd prefer AnyDaisy's voice for all books." checked="true" id="use-narration-checkbox" tabindex="3"/>
+      <checkbox class="settings-checkbox" label="Enable Quirks Mode. Turn this off if you want to load only fully valid books." checked="true" id="quirks-checkbox" tabindex="4"/>
+   </vbox>
+   <hbox>
+      <button label="Help" tabindex="5" oncommand="Sidebar.getInstance().onHelp('advanced_settings')"/>
+      <spacer flex="2"/>
+      <button label="Save" tabindex="6" oncommand="ChangeSettings.getInstance().onApplyAdvancedSettings()"/>
+      <button label="Cancel" tabindex="7" oncommand="ChangeSettings.getInstance().onCancel()"/>
+   </hbox>
+</window>

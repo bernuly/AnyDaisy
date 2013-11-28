@@ -1,0 +1,115 @@
+/* 
+    Document   : galley.css
+    Created on : Jan 15, 2009, 4:12:36 PM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+@namespace d "http://www.daisy.org/z3986/2005/dtbook/";
+
+body {
+   margin: 0px;
+   padding: 0px;
+}
+#book {
+   margin: 0px;
+   margin-left: 85px;
+   padding: 5px;
+}
+#controls {
+   font-size: 0.9em;
+   position: fixed;
+   top: 5px;
+   left: 5px;
+   width: 80px;
+   padding: 0px;
+   margin-right: 5px;
+}
+#sound {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   border: none;
+   margin: 0px;
+   padding: 0px;
+   height: 0px;
+   width: 0px;
+}
+
+d|doctitle {
+   display: block;
+   font-size: 4em;
+   text-align: center;
+   font-weight: bold;
+   margin-bottom: 2em;
+}
+
+d|h1 {
+   display: block;
+   font-size: 1.5em;
+   font-weight: bold;
+   border-bottom: 1px solid rgb(230,230,230);
+   margin-bottom: 1em;
+   margin-top: 1em;
+}
+
+d|h2 {
+   display: block;
+   font-size: 1.2em;
+   font-weight: bold;
+   margin-bottom: 0.5em;
+   margin-top: 0.5em;
+}
+
+d|h3 {
+   display: block;
+   font-size: 1.1em;
+   font-weight: bold;
+   margin-bottom: 0.3em;
+   margin-top: 0.3em;
+}
+
+d|h4 {
+   display: block;
+   font-size: 1em;
+   font-weight: bold;
+   margin-bottom: 0.2em;
+   margin-top: 0.2em;
+}
+
+d|h5 {
+   display: block;
+   font-size: 1em;
+   margin-bottom: 0.2em;
+   margin-top: 0.2em;
+}
+
+.docauthor {
+   display: block;
+   margin-bottom: 0.5em;
+}
+d|docauthor {
+   font-size: 1.2em;
+   font-weight: bold;
+}
+
+.p {
+   display: block;
+   margin-bottom: 1em;
+   width: 80%;
+}
+
+.sent {
+   display: inline;
+}
+
+d|sent {
+   display: inline;
+   padding-right: 0.2em;
+   margin-bottom: 0.2em;
+}
+
+d|strong {
+   font-weight: bold;
+}

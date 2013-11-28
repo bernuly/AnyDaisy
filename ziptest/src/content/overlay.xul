@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://ziptest/skin/overlay.css" type="text/css"?>
+<overlay id="ziptest-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openZipTestSidebar" observes="viewZipTestSidebar" />
+  </menupopup>
+
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="viewZipTestSidebar"
+      autoCheck="false"
+      label="Zip Test"
+      type="checkbox" group="sidebar"
+      sidebarurl="chrome://ziptest/content/ziptest.xul"
+
+      sidebartitle="Zip Test"
+      oncommand="toggleSidebar('viewZipTestSidebar');"/>
+  </broadcasterset>
+
+  <statusbar id="status-bar">
+    <statusbarpanel id="ziptest-status-bar" class="ziptest-status-bar"
+                    context="ziptest-status-manage"
+                    onmousedown=";">
+      <toolbarbutton label="Zip Test" tooltiptext="Open Zip Test" oncommand="showZipTest();"/>
+    </statusbarpanel>
+  </statusbar>
+
+</overlay>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/filepicker.css" type="text/css"?>
+<window id="filepicker" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Open File"
+   orientation="vertical"
+   height="300"
+   width="400"
+   xmlns:h="http://www.w3.org/1999/xhtml" onload="FilePickerDialog.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/FilePickerDialog.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/datadumper.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+   <titlebar><spacer flex="1"/><label id="title" value="Open File"/><spacer flex="1"/></titlebar>
+   <keyset>
+      <key keycode="VK_ESCAPE" oncommand="window.close()"/>
+      <key modifiers="meta" key="W" oncommand="window.close()"/>
+   </keyset>
+   <hbox flex="1">
+      <vbox flex="1" width="60">
+         <listbox flex="1" tabindex="1" id='dirs' tooltiptext="Directory list"/>
+      </vbox>
+      <splitter><grippy/></splitter>
+      <tree flex="4" id="files" hidecolumnpicker="true" tabindex="2"><treecols>
+          <treecol id="name" label="Name" flex="1" primary="true"/>
+          <treecol id="modified" label="Date Modified" flex="1"/>
+      </treecols><treechildren/></tree>
+   </hbox>
+   <hbox>
+      <spacer flex="2"/>
+      <button label="Cancel"  tabindex="3" oncommand="FilePickerDialog.getInstance().onCancel()"/>
+      <button label="Open"  tabindex="4" oncommand="FilePickerDialog.getInstance().onOpen()"/>
+   </hbox>
+</window>

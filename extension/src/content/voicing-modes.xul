@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<overlay id="voicing-modes"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+   <script type="application/x-javascript" src="chrome://daisy/content/overlay.js"/>
+   <keyset>
+      <key id="key_voiceComprehensive"
+           modifiers="alt,shift" keycode="VK_F10"
+           oncommand="DAISYOverlay.getInstance().setVoiceMode('voicing-comprehensive')" />
+      <key id="key_voiceExtension"
+           modifiers="alt,shift" keycode="VK_F11"
+           oncommand="DAISYOverlay.getInstance().setVoiceMode('voicing-books')" />
+      <key id="key_voiceComprehensive"
+           modifiers="alt,shift" keycode="VK_F12"
+           oncommand="DAISYOverlay.getInstance().setVoiceMode('voicing-mute')" />
+   </keyset>
+</overlay>

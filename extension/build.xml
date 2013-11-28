@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Project Properties dialog box.-->
+<project name="Daisy_Extension" default="default" basedir=".">
+    <description>Builds, tests, and runs the project DAISY Book Reader Extension.</description>
+    <import file="nbproject/build-impl.xml"/>
+    <!--
+
+    There exist several targets which are by default empty and which can be 
+    used for execution of your tasks. These targets are usually executed 
+    before and after some main targets. They are: 
+
+      -pre-init:                 called before initialization of project properties
+      -post-init:                called after initialization of project properties
+      -pre-compile:              called before javac compilation
+      -post-compile:             called after javac compilation
+      -pre-compile-single:       called before javac compilation of single file
+      -post-compile-single:      called after javac compilation of single file
+      -pre-compile-test:         called before javac compilation of JUnit tests
+      -post-compile-test:        called after javac compilation of JUnit tests
+      -pre-compile-test-single:  called before javac compilation of single JUnit test
+      -post-compile-test-single: called after javac compilation of single JUunit test
+      -pre-jar:                  called before JAR building
+      -post-jar:                 called after JAR building
+      -post-clean:               called after cleaning build products
+
+    (Targets beginning with '-' are not intended to be called on their own.)
+
+    Example of inserting an obfuscator after compilation could look like this:
+
+        <target name="-post-compile">
+            <obfuscate>
+                <fileset dir="${build.classes.dir}"/>
+            </obfuscate>
+        </target>
+
+    For list of available properties check the imported 
+    nbproject/build-impl.xml file. 
+
+
+    Another way to customize the build is by overriding existing main targets.
+    The targets of interest are: 
+
+      -init-macrodef-javac:     defines macro for javac compilation
+      -init-macrodef-junit:     defines macro for junit execution
+      -init-macrodef-debug:     defines macro for class debugging
+      -init-macrodef-java:      defines macro for class execution
+      -do-jar-with-manifest:    JAR building (if you are using a manifest)
+      -do-jar-without-manifest: JAR building (if you are not using a manifest)
+      run:                      execution of project 
+      -javadoc-build:           Javadoc generation
+      test-report:              JUnit report generation
+
+    An example of overriding the target for project execution could look like this:
+
+        <target name="run" depends="Daisy_Extension-impl.jar">
+            <exec dir="bin" executable="launcher.exe">
+                <arg file="${dist.jar}"/>
+            </exec>
+        </target>
+
+    Notice that the overridden target depends on the jar target and not only on 
+    the compile target as the regular run target does. Again, for a list of available 
+    properties which you can use, check the target you are overriding in the
+    nbproject/build-impl.xml file. 
+
+    -->
+    <property file="version.properties"/>
+    <property file="product.properties"/>
+   <macrodef name="copyxpt">
+      <attribute name="typelib"/>
+      <sequential>
+       <delete file="${build.classes.dir}/components/@{typelib}"/>
+       <copy file="public/@{typelib}" todir="${build.classes.dir}/components"/>
+      </sequential>
+   </macrodef>
+
+    <target name="-pre-jar" depends="help">
+       <copyxpt typelib="nsIDAISYHelper.xpt"/>
+       <copyxpt typelib="nsITTSMediatorService.xpt"/>
+       <copyxpt typelib="nsITTSEngineFactory.xpt"/>
+       <copyxpt typelib="nsITTSEngine.xpt"/>
+       <copyxpt typelib="nsITTSCallback.xpt"/>
+       <echo>Updating install.rdf ...</echo>
+       <tstamp ><format property="version.build" pattern="yyyyMMddHHmmss"/></tstamp>
+       <delete file="${build.classes.dir}/install.rdf"/>
+       <xslt in="src/install.rdf" out="${build.classes.dir}/install.rdf" style="install.rdf.xsl">
+         <param name="product.name" expression="${product.name}"/>
+         <param name="version.major" expression="${version.major}"/>
+         <param name="version.minor" expression="${version.minor}"/>
+         <param name="version.release" expression="${version.release}"/>
+         <param name="version.build" expression="${version.build}"/>
+       </xslt>
+
+       <loadfile property="http" srcfile="${build.classes.dir}/components/HTTP.js"/>
+       <loadfile property="domutil" srcfile="${build.classes.dir}/components/DOMUtil.js"/>
+       <loadfile property="uri" srcfile="${build.classes.dir}/components/URI.js"/>
+       <loadfile property="jslib" srcfile="${build.classes.dir}/components/jslib.js"/>
+
+       <loadfile property="stub" srcfile="${build.classes.dir}/components/Service-Stub.js"/>
+       <loadfile property="service" srcfile="${build.classes.dir}/components/Service.js"/>
+       <loadfile property="db" srcfile="${build.classes.dir}/components/Service-DAISYDB.js"/>
+       <loadfile property="book" srcfile="${build.classes.dir}/components/Service-DAISYBook.js"/>
+       <loadfile property="library" srcfile="${build.classes.dir}/components/Service-DAISYLibrary.js"/>
+       <loadfile property="renderer" srcfile="${build.classes.dir}/components/Service-DAISYRenderer.js"/>
+       <echo>Building ${build.classes.dir}/components/DAISY.js</echo>
+       <delete file="${build.classes.dir}/components/DAISY.js"/>
+       <echo file="${build.classes.dir}/components/DAISY.js">
+${stub}
+${service}
+${db}
+${book}
+${library}
+${renderer}
+${http}
+${domutil}
+${uri}
+${jslib}
+function DAISYProductInfo() {
+   this.name = "${product.name}";
+   this.version = {
+      major: ${version.major},
+      minor: ${version.minor},
+      release: ${version.release},
+      build: ${version.build}
+   };
+}
+       </echo>
+       <delete file="${build.classes.dir}/components/Service-Stub.js"/>
+       <delete file="${build.classes.dir}/components/Service.js"/>
+       <delete file="${build.classes.dir}/components/Service-DAISYDB.js"/>
+       <delete file="${build.classes.dir}/components/Service-DAISYBook.js"/>
+       <delete file="${build.classes.dir}/components/Service-DAISYLibrary.js"/>
+       <delete file="${build.classes.dir}/components/Service-DAISYRenderer.js"/>
+       
+       <loadfile property="smil-stub" srcfile="${build.classes.dir}/components/SMIL-Stub.js"/>
+       <loadfile property="smil" srcfile="${build.classes.dir}/components/SMIL.js"/>
+       <echo>Building ${build.classes.dir}/components/SMIL.js</echo>
+       <delete file="${build.classes.dir}/components/SMIL.js"/>
+       <echo file="${build.classes.dir}/components/SMIL.js">
+${smil-stub}
+${smil}
+${http}
+${uri}
+${domutil}
+${jslib}
+       </echo>
+       <delete file="${build.classes.dir}/components/SMIL-Stub.js"/>
+       
+       <loadfile property="converter" srcfile="${build.classes.dir}/components/DAISYConverter.js"/>
+       <echo>Building ${build.classes.dir}/components/DAISYConverter.js</echo>
+       <delete file="${build.classes.dir}/components/DAISYConverter.js"/>
+       <echo file="${build.classes.dir}/components/DAISYConverter.js">
+${converter}
+${http}
+       </echo>
+
+       <loadfile property="helper" srcfile="${src.dir}/components/DAISYHelper.js"/>
+       <loadfile property="playback" srcfile="${src.dir}/components/Playback.js"/>
+       <echo>Building ${build.classes.dir}/components/DAISYHelper.js</echo>
+       <delete file="${build.classes.dir}/components/DAISYHelper.js"/>
+       <delete file="${build.classes.dir}/components/Playback.js"/>
+       <echo file="${build.classes.dir}/components/DAISYHelper.js">
+${helper}
+${playback}
+       </echo>
+
+       <delete file="${build.classes.dir}/components/DOMUtil.js"/>
+       <delete file="${build.classes.dir}/components/URI.js"/>
+       <delete file="${build.classes.dir}/components/HTTP.js"/>
+       <delete file="${build.classes.dir}/components/jslib.js"/>
+       
+       <!-- Put platform-specific components in their place -->
+       <copy todir="${build.classes.dir}/platform/Darwin_x86-gcc3">
+          <fileset dir="${src.dir}" includes="components/mactts.dylib" />
+       </copy>
+       <copy todir="${build.classes.dir}/platform/WINNT">
+          <fileset dir="${src.dir}" includes="components/sapitts.dll" />
+       </copy>
+    </target>
+    <target name="-post-jar" depends="make-xpi,freetts-xpi">
+       <delete file="${dist.jar}"/>
+    </target>
+    <target name="make-xpi">
+      <delete>
+          <fileset dir="${dist.dir}" includes="*.xpi"/>
+      </delete>
+      <zip destfile="${dist.dir}/daisy.${version.major}.${version.minor}.${version.release}.${version.build}.xpi" basedir="${build.classes.dir}"/>
+    </target>
+    <target name="freetts-setup">
+       <mkdir dir="${dist.dir}/tmp"/>
+       <unzip src="${dist.dir}/daisy.${version.major}.${version.minor}.${version.release}.${version.build}.xpi" dest="${dist.dir}/tmp"/>
+       <mkdir dir="${dist.dir}/tmp/java"/>
+       <mkdir dir="${dist.dir}/tmp/java/lib"/>
+       <mkdir dir="${dist.dir}/tmp/java/classes"/>
+    </target>
+    <target name="freetts-compile" depends="freetts-setup">
+       <javac debug="${javac.debug}" deprecation="${javac.deprecation}" destdir="${dist.dir}/tmp/java/classes" encoding="${source.encoding}" includeantruntime="false" source="${javac.source}" sourcepath="java/src" srcdir="java/src" target="${javac.target}">
+           <classpath>
+               <path path="${javac.classpath}"/>
+           </classpath>
+           <compilerarg line="${javac.compilerargs} ${javac.compilerargs.jaxws}"/>
+       </javac>
+    </target>
+    <target name="freetts-copy" depends="freetts-setup">
+       <copy file="java/javaFirefoxExtensionUtils.jar" todir="${dist.dir}/tmp/java"/>
+       <copy file="java/lib/freetts.jar" todir="${dist.dir}/tmp/java/lib"/>
+       <copy file="java/lib/cmu_us_kal.jar" todir="${dist.dir}/tmp/java/lib"/>
+       <copy file="java/lib/cmudict04.jar" todir="${dist.dir}/tmp/java/lib"/>
+       <copy file="java/lib/cmulex.jar" todir="${dist.dir}/tmp/java/lib"/>
+       <copy file="java/lib/cmutimelex.jar" todir="${dist.dir}/tmp/java/lib"/>
+       <copy file="java/lib/en_us.jar" todir="${dist.dir}/tmp/java/lib"/>
+       <copy file="java/lib/voices.txt" todir="${dist.dir}/tmp/java/lib"/>
+    </target>
+
+    <target name="freetts-xpi" depends="freetts-setup,freetts-compile,freetts-copy">
+       <zip destfile="${dist.dir}/freetts-addon.${version.major}.${version.minor}.${version.release}.${version.build}.zip" basedir="${dist.dir}/tmp" includes="java/**"/>
+       <zip destfile="${dist.dir}/daisy-freetts.${version.major}.${version.minor}.${version.release}.${version.build}.xpi" basedir="${dist.dir}/tmp"/>
+       <delete dir="${dist.dir}/tmp"/>
+    </target>
+
+   <property name="xpidl" location="/usr/local/bin/xpidl"/>
+   <macrodef name="idl2xpt">
+      <attribute name="target"/>
+      <attribute name="include"/>
+      <sequential>
+       <echo>Processing @{target}, including from: @{include}</echo>
+       <exec executable="${xpidl}">
+          <arg value="-m"/>
+          <arg value="typelib"/>
+          <arg value="-I"/>
+          <arg value="@{include}"/>
+          <arg value="-e"/>
+          <arg value="@{target}.xpt"/>
+          <arg value="@{target}.idl"/>
+       </exec>
+      </sequential>
+   </macrodef>
+   <macrodef name="idl2header">
+      <attribute name="target"/>
+      <attribute name="include"/>
+      <sequential>
+       <echo>Processing headers for @{target}, including from: @{include}</echo>
+       <exec executable="${xpidl}">
+          <arg value="-m"/>
+          <arg value="header"/>
+          <arg value="-I"/>
+          <arg value="@{include}"/>
+          <arg value="-e"/>
+          <arg value="@{target}.h"/>
+          <arg value="@{target}.idl"/>
+       </exec>
+      </sequential>
+   </macrodef>
+
+    <property environment="env"/>
+    <property name="mozilla.idl.dir" location="${env.HOME}/workspace/mozilla/obj-ff/dist/sdk/idl"/>
+    <target name="idl">
+       <idl2xpt target="public/nsIDAISYHelper" include="${mozilla.idl.dir}"/>
+       <idl2xpt target="public/nsITTSMediatorService" include="${mozilla.idl.dir}"/>
+       <idl2xpt target="public/nsITTSEngineFactory" include="${mozilla.idl.dir}"/>
+       <idl2xpt target="public/nsITTSEngine" include="${mozilla.idl.dir}"/>
+       <idl2xpt target="public/nsITTSCallback" include="${mozilla.idl.dir}"/>
+    </target>
+    <target name="headers">
+       <idl2header target="public/nsITTSEngineFactory" include="${mozilla.idl.dir}"/>
+       <idl2header target="public/nsITTSEngine" include="${mozilla.idl.dir}"/>
+       <idl2header target="public/nsITTSCallback" include="${mozilla.idl.dir}"/>
+    </target>
+
+    <target name="help" depends="init">
+       <delete file="${build.classes.dir}/content/help/help.xml"/>
+       <delete file="${build.classes.dir}/content/help/help.ncx"/>
+       <delete file="${build.classes.dir}/content/help/help.smil"/>
+       <delete file="${build.classes.dir}/content/help/help.opf"/>
+       <xslt in="docs/help.xml" out="${build.classes.dir}/content/help/help-stage1.xml" style="docs/replace-product-name.xsl">
+         <param name="product.name" expression="${product.name}"/>
+       </xslt>
+       <xslt in="${build.classes.dir}/content/help/help-stage1.xml" out="${build.classes.dir}/content/help/help.xml" style="docs/dtbook-augment.xsl"/>
+       <delete file="${build.classes.dir}/content/help/help-stage1.xml"/>
+       <xslt in="${build.classes.dir}/content/help/help.xml" out="${build.classes.dir}/content/help/help.ncx" style="docs/dtbook2ncx.xsl">
+         <param name="href" expression="help.smil"/>
+       </xslt>
+       <xslt in="${build.classes.dir}/content/help/help.xml" out="${build.classes.dir}/content/help/help.smil" style="docs/dtbook2smil.xsl">
+         <param name="href" expression="help.xml"/>
+       </xslt>
+       <xslt in="docs/help.opf" out="${build.classes.dir}/content/help/help.opf" style="docs/replace-product-name.xsl">
+         <param name="product.name" expression="${product.name}"/>
+       </xslt>
+    </target>
+
+    <!-- TODO: document the setup for JSDoc Toolkit. Requires: JSDocToolkit, JSDocToolkit Ant Task, Rhino
+    <taskdef name="jsdoctoolkit" classname="uk.co.darrenhurley.ant.tasks.JsDocToolkit" classpath="${jsdoc.anttask.jar};${rhino.home}/js.jar"/>
+    <target name="-javadoc-build" depends="init">
+       <jsdoctoolkit jsdochome="${jsdoc.home}" 
+          template="jsdoc" 
+          outputdir="${dist.jsdoc.dir}" 
+          inputdir="${src.dir}/content" />
+    </target>
+    -->
+</project>

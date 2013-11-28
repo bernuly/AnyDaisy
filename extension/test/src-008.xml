@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtbook xmlns="http://www.daisy.org/z3986/2005/dtbook/" version="2005-3">
+  <head>
+    <meta name="dc:Title" content="Test 007" />
+  </head>
+  <book>
+    <frontmatter>
+      <doctitle>Test 007</doctitle>
+      <docauthor>Developer</docauthor>
+    </frontmatter>
+    <bodymatter>
+      <level1>
+        <h1>Table with inline content with wrappers in cell</h1>
+        <pagenum>1</pagenum>
+        <table><td>
+           <strong>a strong part</strong>
+           <span>and a non-strong part.</span>
+           </td>
+        </table>
+      </level1>
+    </bodymatter>
+  </book>
+</dtbook>
+

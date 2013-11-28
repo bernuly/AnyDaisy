@@ -1,0 +1,9 @@
+#/bin/bash
+
+# search file_pattern search_regex
+# Example: search \*.java .\*DBType
+# Note - 2nd param must escape both for bash and for regex
+
+
+[ $! -lt 2 ] && echo $usage
+find . -name "$1" -exec grep -H -n -e "$2" {} \;

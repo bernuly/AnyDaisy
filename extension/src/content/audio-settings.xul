@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/settings.css" type="text/css"?>
+<?xul-overlay href="chrome://daisy/content/voicing-modes.xul"?>
+<window id="settings" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Audio Settings"
+   orientation="vertical"
+   class="settings"
+   xmlns:h="http://www.w3.org/1999/xhtml" onload="ChangeSettings.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/datadumper.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/ChangeSettings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Sidebar.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+   <keyset>
+      <key keycode="VK_RETURN" oncommand="ChangeSettings.getInstance().onApplyAudioSettings()"/>
+      <key keycode="VK_ENTER" oncommand="ChangeSettings.getInstance().onApplyAudioSettings()"/>
+      <key keycode="VK_ESCAPE" oncommand="ChangeSettings.getInstance().close()"/>
+      <key modifiers="meta" key="W" oncommand="ChangeSettings.getInstance().close()"/>
+   </keyset>
+   <description value="These settings allow you to change how AnyDaisy produces sound." 
+      id="audio-settings-description"
+      class="settings-description"
+      tabindex="1" />
+   <groupbox id="voicing-mode-group" >
+      <caption label="Voicing Mode" tabindex="2" />
+      <description tabindex="3" value="These settings allow you to change how AnyDaisy interacts with your screenreader." />
+      <radiogroup tabindex="4" id="voicing-radiogroup">
+        <radio id="voicing-comprehensive" label="Comprehensive - AnyDaisy will read books and navigation controls, Firefox menu entries, Firefox tab names, and settings dialogs. Alt-shift-F10"/>
+        <radio id="voicing-books" selected="true" label="Books and Navigation - AnyDaisy will read books and book navigation controls. Alt-shift-F11"/>
+        <radio id="voicing-mute" label="Mute - AnyDaisy will not read anything. Alt-shift-F12"/>
+      </radiogroup>
+   </groupbox>
+   <vbox>
+       <checkbox class="settings-checkbox" label="Play sound when AnyDaisy launches" checked="true" id="cue-sidebar-open-checkbox" tabindex="5"/>
+       <checkbox class="settings-checkbox" label="Play sound when moving between navigation areas" checked="true" id="sound-navigation-checkbox" tabindex="6"/>
+   </vbox>
+   <hbox>
+      <button label="Help" tabindex="7" oncommand="Sidebar.getInstance().onHelp('audio_settings')"/>
+      <spacer flex="2"/>
+      <button label="Save" tabindex="8" oncommand="ChangeSettings.getInstance().onApplyAudioSettings()"/>
+      <button label="Cancel" tabindex="9" oncommand="ChangeSettings.getInstance().onCancel()"/>
+   </hbox>
+</window>

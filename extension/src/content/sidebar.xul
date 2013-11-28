@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/sidebar.css" type="text/css"?>
+<page id="sidebar" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="AnyDaisy"
+   onload="Sidebar.getInstance().init()"
+   onunload="Sidebar.getInstance().destroy()"
+   xmlns:h="http://www.w3.org/1999/xhtml" flex="1">
+   <script type="application/x-javascript" src="chrome://daisy/content/overlay.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/DOMUtil.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/ZipDecoder.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Sidebar.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/datadumper.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/FilePicker.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+<!--
+<script src="soundmanager2/script/soundmanager2.js" type="text/javascript"></script>
+<script type="text/javascript">
+soundManager.url = "soundmanager2/swf/";
+soundManager.consoleOnly = true;
+</script>
+-->
+<vbox id="book-sidebar" width="200" minwidth="60" maxwidth="500" flex="1">
+   <groupbox flex="1" id="toc-tabs">
+      <label id="document-title" class="heading" />
+      <tree id="book-toc" flex="2" tabindex="8" hidecolumnpicker="true" accesskey="t" onfocus="Sidebar.getInstance().voice(this)"  onblur="Sidebar.getInstance().cancelVoice(this)" tooltiptext="Table of Contents">
+         <treecols>
+            <treecol label="Item" flex="4" primary="true"/>
+         </treecols>
+         <treechildren/>
+      </tree>
+   </groupbox>
+</vbox>
+<hbox id="menu" align="bottom">
+   <vbox class="focus-wrapper">
+      <spacer flex="3"/>
+   </vbox>
+   <vbox class="focus-wrapper">
+      <spacer flex="3"/>
+   </vbox>
+   <spacer flex="2"/>
+   <vbox id='logo'>
+      <spacer flex="3"/>
+      <toolbarbutton class="link" label="Bookshare" tooltiptext="Go to Bookshare web site" tabindex="11" oncommand="Sidebar.getInstance().onBookshare()" onfocus="Sidebar.getInstance().voice(this)" >
+         <image src='images/bookshare-logo.png'/>
+      </toolbarbutton>
+   </vbox>
+
+</hbox>
+</page>

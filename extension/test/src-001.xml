@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtbook xmlns="http://www.daisy.org/z3986/2005/dtbook/" version="2005-3">
+  <head>
+    <meta name="dc:Title" content="Test NNN" />
+  </head>
+  <book>
+    <frontmatter>
+      <doctitle>Test 001</doctitle>
+      <docauthor>Developer</docauthor>
+    </frontmatter>
+    <bodymatter>
+      <level1>
+        <h1>Image Group Test, single image</h1>
+        <imggroup> 
+          <img src="test.png" alt="A snake holds a large egg in its mouth." />
+          <caption>
+            <em>How can a snake swallow and digest an egg? Humans aren't capable of feats like this. Our jaws aren't flexible enough, for one thing. The human digestive system, however, moves food along with the same kind of muscular contractions that the snake uses.</em>
+          </caption>
+        </imggroup>
+      </level1>
+    </bodymatter>
+  </book>
+</dtbook>
+

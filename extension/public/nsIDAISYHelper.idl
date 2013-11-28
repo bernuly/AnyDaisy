@@ -1,0 +1,32 @@
+#include "nsISupports.idl"
+
+interface nsIDOMWindow;
+
+/**
+ * Instances of this component write UI into the display page. This component
+ * is trusted so can access preferences etc, but page content isn't and so
+ * cannot.
+ */
+[scriptable, uuid(8667f289-ed59-4aaf-9111-b7aa88468cb5)]
+interface nsIDAISYHelper : nsISupports
+{
+
+  /**
+   * Initializes the DAISY book helper and loads the book from the OPF document.
+   * @param  aWindow
+   *         The DOMWindow of the page.
+   *         window.location.href == the URI of the book.
+   */
+  void init(in nsIDOMWindow aWindow);
+
+  /**
+   * Writes the book contents to the page, assumes that the object is initialized.
+   */
+  void writeContent();
+
+  /**
+   * Uninitialize the helper
+   */
+  void close();
+
+};

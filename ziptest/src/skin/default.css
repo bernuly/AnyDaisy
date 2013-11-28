@@ -1,0 +1,20 @@
+/* 
+    Document   : default
+    Created on : Jan 5, 2009, 1:40:25 PM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#zipTest {
+   height: 180px;
+}
+
+#main {
+   height: 100%;
+}
+
+#content {
+   height: 100%;
+   min-height: 300px;
+}

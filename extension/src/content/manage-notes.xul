@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/manage-notes.css" type="text/css"?>
+<?xul-overlay href="chrome://daisy/content/voicing-modes.xul"?>
+<window id="manage-notes" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Manage My Notes"
+   orientation="vertical"
+   onload="ManageNotes.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Sidebar.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/ManageNotes.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+<keyset>
+   <key keycode="VK_RETURN" oncommand="ManageNotes.getInstance().onSave()"/>
+   <key keycode="VK_ENTER" oncommand="ManageNotes.getInstance().onSave()"/>
+   <key keycode="VK_ESCAPE" oncommand="ManageNotes.getInstance().onCancel()"/>
+   <key modifiers="meta" key="W" oncommand="ManageNotes.getInstance().onCancel()"/>
+</keyset>
+<!-- Leaving off the tabindex on controls, as there seems to be a FF bug that prevents shift-tab
+     from working in the textbox fields. -->
+<hbox flex="1">
+   <vbox flex="1" width="80">
+      <label class="title" value="My Notes"/>
+      <listbox id="note-list" flex="1" tooltiptext="notes list"/>
+   </vbox>
+   <splitter><grippy/></splitter>
+   <vbox id="note-editor" flex="1">
+      <grid flex="2">
+         <columns>
+            <column/>
+            <column flex="1"/>
+         </columns>
+         <rows>
+            <row>
+               <label value="Name:" control="name"/>
+               <textbox id="name" flex="2" tooltiptext="Note name"/>
+            </row>
+            <row flex="2">
+               <label value="Note:" control="note"/>
+               <textbox id="note" flex="2" multiline="true" tooltiptext="Note text" />
+            </row>
+          </rows>
+      </grid>
+      <hbox>
+         <spacer flex="2"/>
+         <button label="Save Changes" oncommand="ManageNotes.getInstance().onSave()"/>
+         <button label="Remove Note"  oncommand="ManageNotes.getInstance().onRemove()"/><spacer flex="2"/>
+      </hbox>
+   </vbox>
+</hbox>
+   <separator class="groove-thin"/>
+   <hbox><spacer flex="2"/><button label="Close" oncommand="ManageNotes.getInstance().onCancel()"/></hbox>
+</window>

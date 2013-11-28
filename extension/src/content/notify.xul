@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/notify.css" type="text/css"?>
+<window id="settings" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Notify"
+   orientation="vertical"
+   width="30em"
+   xmlns:h="http://www.w3.org/1999/xhtml" onload="Notify.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/Notify.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+   <keyset>
+      <key keycode="VK_ESCAPE" oncommand="Notify.getInstance().onOK()"/>
+      <key modifiers="meta" key="W" oncommand="Notify.getInstance().onOK()"/>
+   </keyset>
+   <label tabindex="1" id='message' value="" control="password"/>
+   <hbox><spacer flex="2"/><button id="ok" label="OK" tabindex="3" oncommand="Notify.getInstance().onOK()"/></hbox>
+</window>

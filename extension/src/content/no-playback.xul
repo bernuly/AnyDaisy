@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/settings.css" type="text/css"?>
+<window id="no-playback" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="No Playback Available"
+   width="400" height="150"
+   orientation="vertical"
+   xmlns:h="http://www.w3.org/1999/xhtml" onload="NoPlayback.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/NoPlayback.js"/>
+   <keyset>
+      <key keycode="VK_ESCAPE" oncommand="window.close()"/>
+      <key modifiers="meta" key="W" oncommand="window.close()"/>
+   </keyset>
+   <description>Your operating system seems to not have a TTS (Text-to-Speech) engine available.  This
+   engine is required to enable playback.  You may need to install additional software.</description>
+   <vbox id="os"/>
+   <hbox><spacer flex="2"/><button label="OK"  tabindex="14" oncommand="window.close()"/><spacer flex="2"/></hbox>
+</window>

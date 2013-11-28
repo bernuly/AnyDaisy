@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <RDF:Description RDF:about="urn:mozilla:install-manifest">
+  
+    <em:id>{6be5ef88-4289-44d1-81f2-097313ed640b}</em:id>
+    <em:name>AnyDaisy</em:name>
+    <em:version>0.1</em:version>
+    <em:description>A DAISY reader for Firefox</em:description>
+    <em:creator>Benetech</em:creator>
+    <em:homepageURL>http://www.benetech.org/</em:homepageURL>
+    <em:aboutURL>chrome://daisy/content/about.xul</em:aboutURL>
+    <em:unpack>true</em:unpack>
+    <em:updateURL>https://daisyfox.qa.bookshare.org/check?os=%APP_OS%&amp;version=%ITEM_VERSION%</em:updateURL>
+
+    <!-- firefox -->
+    <em:targetApplication>
+       <RDF:Description em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                    em:minVersion="1.5"
+                    em:maxVersion="9.*.*" />
+    </em:targetApplication>
+    <!-- flock -->
+    <em:targetApplication>
+       <RDF:Description em:id="{a463f10c-3994-11da-9945-000d60ca027b}"
+                     em:minVersion="0.1"
+                     em:maxVersion="1.0" />
+    </em:targetApplication>
+
+  </RDF:Description>
+
+</RDF:RDF>

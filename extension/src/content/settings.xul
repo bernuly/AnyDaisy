@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/settings.css" type="text/css"?>
+<window id="settings" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="DAISY Settings"
+   orientation="vertical"
+   xmlns:h="http://www.w3.org/1999/xhtml" onload="ChangeSettings.getInstance().init(window.arguments[0])">
+   <script type="application/x-javascript" src="chrome://daisy/content/ChangeSettings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/UIVoice.js"/>
+<keyset>
+   <key keycode="VK_RETURN" oncommand="ChangeSettings.getInstance().onApply()"/>
+   <key keycode="VK_ENTER" oncommand="ChangeSettings.getInstance().onApply()"/>
+   <key keycode="VK_ESCAPE" oncommand="window.close()"/>
+   <key modifiers="meta" key="W" oncommand="window.close()"/>
+</keyset>
+   <groupbox>
+       <caption label="Playback Settings"/>
+       <grid>
+          <columns><column/><column/><column/></columns>
+          <rows>
+             <row align="middle" id="row1">
+                <checkbox label="Sound?" checked="true" id="sound-checkbox" tabindex="1"/>
+                <checkbox label="Show Images?" checked="true" id="show-images-checkbox" tabindex="5"/>
+                <hbox align="top"><checkbox label="Read DAISY Content?" checked="false" id="read-content-checkbox" tabindex="9"/></hbox>
+             </row>
+
+             <row align="middle" id="row2">
+                <checkbox label="Highlight?" checked="true" id="highlight-checkbox" tabindex="2"/>
+                <checkbox label="Allow Quirks?" checked="false" id="quirks-checkbox" tabindex="6"/>
+                <checkbox label="Read DAISY Content instead of Audio?" checked="false" id="force-read-content-checkbox" tabindex="10"/>
+             </row>
+
+             <row align="middle" id="row3">
+                <checkbox label="Follow Position?" checked="false" id="focusfollow-checkbox" tabindex="3"/>
+                <checkbox label="Read UI?" checked="false" id="read-ui-checkbox" tabindex="11"/>
+             </row>
+             <row align="middle" id="row4">
+                <checkbox label="Pause on sidebars during playback?" checked="false" id="sidebar-pause-checkbox" tabindex="4"/>
+<!--
+                <checkbox label="Read annotations during playback?" checked="false" id="notes-inline-checkbox" tabindex="8"/>
+-->
+                <checkbox label="Play sound when AnyDaisy launches?" checked="false" id="cue-sidebar-open-checkbox" tabindex="12"/>
+             </row>
+          </rows>
+        </grid>
+        <hbox>
+          <hbox align="center">
+             <label value="Highlight Time: " control="highlight-time"/>
+             <scale id="highlight-time" tooltiptext="Highlight time" value="2" max="15" min="1" tabindex="13"/>
+             <label id="highlight-time-display" value=" 2 seconds"/>
+          </hbox>
+          <hbox align="center">
+             <label value="Between Pause: " control="playback-pause-time"/>
+             <scale id="playback-pause-time" tooltiptext="Playback pause time" value="1" max="10" min="0" tabindex="14"/>
+             <label id="playback-pause-display" value=" 0.5 seconds"/>
+          </hbox>
+        </hbox>
+   </groupbox>
+   <groupbox>
+     <caption label="Voice Settings"/>
+     <hbox>
+       <checkbox label="Use System Defaults?" checked="true" id="voice-system-defaults-checkbox" tabindex="15"/>
+       <spacer flex="1"/>
+       <button tabindex="16" label="Test Voice" oncommand="ChangeSettings.getInstance().testTTS()"/>
+     </hbox>
+     <hbox align="center">
+       <label value="Speech Rate: " control="speech-rate"/>
+       <scale id="speech-rate" tooltiptext="Speech Rate" value="0" max="10" min="-10" increment="1" tabindex="17"/>
+       <label id="speech-rate-display" value=" wpm"/>
+     </hbox>
+   </groupbox>
+   <hbox><spacer flex="2"/><button label="Apply"  tabindex="18" oncommand="ChangeSettings.getInstance().onApply()"/><button label="Close"  tabindex="19" oncommand="ChangeSettings.getInstance().onCancel()"/></hbox>
+</window>

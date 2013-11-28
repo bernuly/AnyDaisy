@@ -1,0 +1,21 @@
+/* 
+    Document   : help
+    Created on : Jan 27, 2009, 4:33:34 PM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#help {
+   width: 700px;
+   height: 600px;
+}
+
+#toc {
+   background-color: white;
+}
+
+#help-text {
+   background-color: white;
+}

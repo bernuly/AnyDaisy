@@ -1,0 +1,40 @@
+#include "nsISupports.idl"
+
+interface nsITTSEngineFactory;
+interface nsITTSEngine;
+
+/**
+ * Provides the ability to instantiate a particular TTS implementation
+ */
+[scriptable, uuid(87689d25-f94e-4e0f-9a0e-f8bc8c11d7a0)]
+interface nsITTSEngineFactory : nsISupports
+{
+
+  /**
+   * The priority relative to other engines
+   */
+  attribute long priority;
+
+  /**
+   * The name of the engine
+   */
+  readonly attribute AString name;
+
+  /**
+   * Initializes the factory
+   * @return Returns true if the component initialized properly
+   */
+  boolean initialize();
+
+  /**
+   * Checks the local system and indicates whether the
+   * engine is available.
+   */
+  boolean isAvailable();
+
+  /**
+   * Returns a list of all engines registered with the mediator
+   */
+  nsITTSEngine createEngine();
+
+};

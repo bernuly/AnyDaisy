@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dtbook xmlns="http://www.daisy.org/z3986/2005/dtbook/" version="2005-3">
+  <head>
+    <meta name="dc:Title" content="Test NNN" />
+  </head>
+  <book>
+    <frontmatter>
+      <doctitle>Test 003</doctitle>
+      <docauthor>Developer</docauthor>
+    </frontmatter>
+    <bodymatter>
+      <level1>
+        <h1>Block Quote Test</h1>
+        <blockquote>
+           <p>This is paragraph one.</p>
+           <p>This is paragraph two.</p>
+        </blockquote>
+      </level1>
+    </bodymatter>
+  </book>
+</dtbook>
+

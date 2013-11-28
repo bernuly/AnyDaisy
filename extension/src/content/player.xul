@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://daisy/skin/player.css" type="text/css"?>
+<window id="player" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="DAISY Player"
+   orientation="vertical"
+   xmlns:h="http://www.w3.org/1999/xhtml"
+   onload="Player.getInstance().init()" onresize="Player.getInstance().onResize(event);event.stopPropagation();">
+   <script type="application/x-javascript" src="chrome://daisy/content/DOMUtil.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/ZipDecoder.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/BookManager.js"/>
+   <script type="application/x-javascript" src="chrome://daisy/content/Player.js"/>
+<keyset>
+   <key id="toc-focus-key" modifiers="control" key="t" oncommand="Player.getInstance().moveToTOC()"/>
+   <key id="open-book-menu-key" modifiers="control" key="o" oncommand="Player.getInstance().showOpenBookMenu()"/>
+   <key id="bookshelf-tab-key" modifiers="control" key="b" oncommand="Player.getInstance().showTab(0)"/>
+   <key id="reading-tab-key" modifiers="control" key="r" oncommand="Player.getInstance().showTab(1)"/>
+   <key id="download-tab-key" modifiers="control" key="d" oncommand="Player.getInstance().showTab(2)"/>
+   <key id="zoom-in-key" modifiers="accel" key="+" oncommand="Player.getInstance().onZoomIn()"/>
+   <key id="zoom-out-key" modifiers="accel" key="-" oncommand="Player.getInstance().onZoomOut()"/>
+   <key id="zoom-reset-key" modifiers="accel" key="0" oncommand="Player.getInstance().onZoomReset()"/>
+   <key id="close" modifiers="meta" key="W" oncommand="window.close()"/>
+</keyset>
+<popupset>
+<panel id='book-menu-popup' width="250"><richlistbox id='book-menu-list'/></panel>
+</popupset>
+<vbox flex="1">
+<hbox id="controls" align="top">
+<vbox class="focus-wrapper">
+<spacer flex="1"/>
+   <toolbarbutton id="previous" tooltiptext="Previous" image="images/prev-button.png" oncommand="Player.getInstance().onPrevious()"  tabindex="3"/>
+<spacer flex="1"/>
+</vbox>
+<vbox class="focus-wrapper">
+<spacer flex="1"/>
+<toolbarbutton id="play" tooltiptext="Play" image="images/play-button.png"  oncommand="Player.getInstance().onPlay()" tabindex="4"/>
+<spacer flex="1"/>
+</vbox>
+<vbox class="focus-wrapper">
+<spacer flex="1"/>
+   <toolbarbutton id="next" tooltiptext="Next" image="images/next-button.png"  oncommand="Player.getInstance().onNext()" tabindex="5"/>
+<spacer flex="1"/>
+</vbox>
+<spacer flex="2"/>
+<vbox class="focus-wrapper">
+<spacer flex="1"/>
+<toolbarbutton class="link" label="Settings" oncommand="Player.getInstance().onSettings()"  tabindex="1"/>
+<spacer class="link"/>
+<spacer flex="1"/>
+</vbox>
+<vbox class="focus-wrapper">
+<spacer flex="1"/>
+<toolbarbutton class="link" label="Help" oncommand="Player.getInstance().onHelp()"  tabindex="2"/>
+<spacer class="link"/>
+<spacer flex="1"/>
+</vbox>
+</hbox>
+<tabbox id="main-tabs"  flex="2">
+   <hbox>
+      <tabs>
+      <tab label="Bookshelf" tabindex="6" onclick="Player.getInstance().onSelectTab(0);" onfocus="Player.getInstance().onSelectTab(0)">
+         <stack>
+         <hbox><label class="left"/><label class="middle"/><label class="right"/></hbox>
+         <vbox class='tab-text-wrapper'>
+         <spacer flex="1"/>
+         <label class='tab-text' value="BOOKSHELF"/>
+         <spacer flex="1"/>
+         </vbox>
+         </stack>
+      </tab>
+      <tab label="Currently Reading" onclick="Player.getInstance().onSelectTab(1); Player.getInstance().onOpenBookClick();" onmousedown="Player.getInstance().onOpenBookDown();"  onfocus="Player.getInstance().onSelectTab(1)">
+         <stack>
+         <hbox><label class="left"/><label class="middle"/><label class="right"/></hbox>
+         <vbox class='tab-text-wrapper'>
+         <spacer flex="1"/>
+         <label class='tab-text' value="CURRENTLY READING"/>
+         <spacer flex="1"/>
+         </vbox>
+         </stack>
+      </tab>
+      <tab label="Download New Book" onclick="Player.getInstance().onSelectTab(2);" onfocus="Player.getInstance().onSelectTab(2)">
+         <stack>
+         <hbox><label class="left"/><label class="middle"/><label class="right"/></hbox>
+         <vbox class='tab-text-wrapper'>
+         <spacer flex="1"/>
+         <label class='tab-text' value="DOWNLOAD NEW BOOK"/>
+         <spacer flex="1"/>
+         </vbox>
+         </stack>
+      </tab>
+      </tabs>
+   </hbox>
+   <tabpanels flex="2">
+      <tabpanel orient="vertical" flex="2">
+         <groupbox id="bookshelf" flex="2">
+            <caption label="Bookshelf"/>
+            <listbox id="booklist" flex="4"  tabindex="20"/>
+         </groupbox>
+         <splitter collapse="after" resizeafter="farthest"><grippy/></splitter>
+         <groupbox id="addbook">
+            <caption label="Add a Book"/>
+            <grid flex="2">
+               <columns>
+                  <column/>
+                  <column flex="1"/>
+               </columns>
+               <rows>
+                  <row>
+                     <label value="Book:" control="filename"/>
+                     <hbox flex="1">
+                        <textbox id="filename" flex="2" tabindex="21"/>
+                        <button flex="0" id="browse-file" label="Browse..." tabindex="22" tooltiptext="Browse for book zip file." oncommand="Player.getInstance().browseForFile()"/>
+                        <button id="decode" label="Add" tabindex="23" oncommand="Player.getInstance().addBook()"/>
+                     </hbox>
+                  </row>
+                </rows>
+            </grid>
+         </groupbox>
+      </tabpanel>
+      <tabpanel orient="vertical" flex="2" context="book-menu">
+         <hbox flex="1">
+            <vbox id="book-sidebar" width="200" minwidth="60" maxwidth="500">
+               <label id='book-toc-deck-hack' tabindex='20'/>
+               <deck id="book-toc-deck" flex="2"/>
+            </vbox>
+            <splitter id='toc-splitter' collapse="before" resizeafter="farthest"><grippy/></splitter>
+            <vbox flex="2" id="book-container" minwidth="100">
+               <vbox align="end" id="action-bar">
+               <hbox align="center">
+                  <hbox class="item separator" align="center"><textbox id='search' tooltiptext='search text' size='40' tabindex="21"/><h:a  tabindex="22" alt='Search document' href="#" id='search-action'>Search</h:a></hbox>
+                  <hbox class="item separator" align="center"><textbox id='page' tooltiptext='page number' size='3' tabindex="23"/><h:a  tabindex="24" alt='Got to page number' href="#" id='page-action'>Page</h:a></hbox>
+                  <hbox class="item bookmark" align="center"><h:a  tabindex="25" alt='Got to page number' href="#" id='bookmark-action'>Bookmark</h:a></hbox>
+               </hbox>
+               </vbox>
+               <label id='book-deck-hack' tabindex='26'/>
+               <deck id="book-deck" flex="2"/>
+            </vbox>
+         </hbox>
+      </tabpanel>
+      <tabpanel orient="vertical" flex="2">
+         <description>Download</description>
+      </tabpanel>
+   </tabpanels>
+</tabbox>
+<hbox id='status'>
+<vbox>
+<spacer flex="1"/>
+<label id='page-no'/>
+<spacer flex="1"/>
+</vbox>
+<spacer flex="2"/>
+<vbox id='logo'>
+<image src='images/bookshare-logo.png'/>
+</vbox>
+</hbox>
+</vbox>
+</window>

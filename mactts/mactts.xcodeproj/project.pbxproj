@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2AAC0CC05546C4400DB518D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		FADA23B30F6F26E0001399FF /* TTSEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = FADA23B20F6F26E0001399FF /* TTSEngine.h */; };
+		FADA23B50F6F27E3001399FF /* TTSEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = FADA23B40F6F27E3001399FF /* TTSEngine.mm */; };
+		FADA24BF0F6F6081001399FF /* TTSEngineFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = FADA24BD0F6F6081001399FF /* TTSEngineFactory.h */; };
+		FADA24C00F6F6081001399FF /* TTSEngineFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = FADA24BE0F6F6081001399FF /* TTSEngineFactory.mm */; };
+		FADA24E60F6F635E001399FF /* module.h in Headers */ = {isa = PBXBuildFile; fileRef = FADA24E40F6F635E001399FF /* module.h */; };
+		FADA24E70F6F635E001399FF /* module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FADA24E50F6F635E001399FF /* module.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* mactts_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mactts_Prefix.pch; sourceTree = "<group>"; };
+		D2A6134D07B89F6200DD23D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		D2AAC0C705546C1D00DB518D /* mactts.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = mactts.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		FADA23B20F6F26E0001399FF /* TTSEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSEngine.h; sourceTree = "<group>"; };
+		FADA23B40F6F27E3001399FF /* TTSEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTSEngine.mm; sourceTree = "<group>"; };
+		FADA24BD0F6F6081001399FF /* TTSEngineFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSEngineFactory.h; sourceTree = "<group>"; };
+		FADA24BE0F6F6081001399FF /* TTSEngineFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTSEngineFactory.mm; sourceTree = "<group>"; };
+		FADA24E40F6F635E001399FF /* module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module.h; sourceTree = "<group>"; };
+		FADA24E50F6F635E001399FF /* module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = module.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC0C505546C1D00DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2AAC0CC05546C4400DB518D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC0C705546C1D00DB518D /* mactts.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* mactts */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = mactts;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FADA24BD0F6F6081001399FF /* TTSEngineFactory.h */,
+				FADA24BE0F6F6081001399FF /* TTSEngineFactory.mm */,
+				FADA23B20F6F26E0001399FF /* TTSEngine.h */,
+				FADA23B40F6F27E3001399FF /* TTSEngine.mm */,
+				FADA24E40F6F635E001399FF /* module.h */,
+				FADA24E50F6F635E001399FF /* module.cpp */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
+				D2A6134D07B89F6200DD23D3 /* CoreData.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF5E0370ADEE00C91783 /* mactts_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC0C305546C1D00DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FADA23B30F6F26E0001399FF /* TTSEngine.h in Headers */,
+				FADA24BF0F6F6081001399FF /* TTSEngineFactory.h in Headers */,
+				FADA24E60F6F635E001399FF /* module.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC0C605546C1D00DB518D /* mactts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB917D08733D990010E9CD /* Build configuration list for PBXNativeTarget "mactts" */;
+			buildPhases = (
+				D2AAC0C305546C1D00DB518D /* Headers */,
+				D2AAC0C405546C1D00DB518D /* Sources */,
+				D2AAC0C505546C1D00DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mactts;
+			productName = mactts;
+			productReference = D2AAC0C705546C1D00DB518D /* mactts.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB918108733D990010E9CD /* Build configuration list for PBXProject "mactts" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* mactts */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC0C605546C1D00DB518D /* mactts */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC0C405546C1D00DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FADA23B50F6F27E3001399FF /* TTSEngine.mm in Sources */,
+				FADA24C00F6F6081001399FF /* TTSEngineFactory.mm in Sources */,
+				FADA24E70F6F635E001399FF /* module.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB917E08733D990010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mactts_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = mactts;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB917F08733D990010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = mactts_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = mactts;
+			};
+			name = Release;
+		};
+		1DEB918208733D990010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../extension/public,
+					"../../xulrunner-sdk/sdk/include",
+				);
+				OTHER_LDFLAGS = (
+					"-L../../xulrunner-sdk/sdk/lib/",
+					"-L../../xulrunner-sdk/bin",
+					"-lxpcomglue_s",
+					"-lxpcom",
+					"-lnspr4",
+				);
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		1DEB918308733D990010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../extension/public,
+					"../../xulrunner-sdk/sdk/include",
+				);
+				OTHER_LDFLAGS = (
+					"-L../../xulrunner-sdk/sdk/lib/",
+					"-L../../xulrunner-sdk/bin",
+					"-lxpcomglue_s",
+					"-lxpcom",
+					"-lnspr4",
+				);
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB917D08733D990010E9CD /* Build configuration list for PBXNativeTarget "mactts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB917E08733D990010E9CD /* Debug */,
+				1DEB917F08733D990010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB918108733D990010E9CD /* Build configuration list for PBXProject "mactts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB918208733D990010E9CD /* Debug */,
+				1DEB918308733D990010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

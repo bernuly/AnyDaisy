@@ -1,0 +1,19 @@
+/* 
+    Document   : rendered-linux.css
+    Created on : Mar 30, 2009, 11:09:48 AM
+    Author     : alex
+    Description:
+        Linux specific styling
+*/
+
+#daisy-internal-controls #daisy-internal-page-widget #daisy-internal-page-no {
+   position: absolute;
+   left: 3em;
+}
+
+#daisy-internal-controls #daisy-internal-page-widget #daisy-internal-page-total {
+   position: relative;
+   left: 3em;
+}
+
+

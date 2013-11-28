@@ -1,0 +1,255 @@
+/* 
+    Document   : player
+    Created on : Jan 27, 2009, 7:32:09 AM
+    Author     : alex
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#player {
+   min-width: 600px;
+   min-height: 400px;
+   width: 810px;
+   height: 600px;
+   font-family: "san serif", Helvetica;
+   color: rgb(30,30,30);
+}
+
+#controls {
+   margin-top: 10px;
+   margin-bottom: 15px;
+   margin-left: 20px;
+   height: 50px;
+}
+
+#controls toolbarbutton:hover {
+   cursor: pointer;
+}
+
+#controls toolbarbutton {
+   padding: 0px;
+}
+
+#controls toolbarbutton .toolbarbutton-text {
+   display: none;
+}
+
+#controls .focus-wrapper {
+   min-height: 50px;
+}
+
+
+#controls .link {
+   text-decoration: underline;
+}
+
+#controls spacer.link {
+   height: 30px;
+}
+
+#controls .link:hover {
+   cursor: pointer;
+}
+
+#controls .link .toolbarbutton-text {
+   display: -moz-box;
+}
+
+
+#main-tabs {
+   overflow: auto;
+   margin: 0px;
+   padding-bottom: 0px;
+}
+#main-tabs tab {
+   -moz-appearance: none;
+   text-align: center;
+   margin: 0px;
+   padding: 0px;
+}
+
+#main-tabs tab stack {
+   padding: 0px;
+   padding-right: 2px;
+}
+
+#main-tabs tab .left {
+   background-image: url(chrome://daisy/content/images/tab-left.png);
+   width: 63px;
+   margin: 0px;
+   padding: 0px;
+}
+
+#main-tabs tab .middle {
+   background-image: url(chrome://daisy/content/images/tab-middle.png);
+   margin: 0px;
+   padding: 0px;
+   width: 124px;
+}
+
+#main-tabs tab .right {
+   background-image: url(chrome://daisy/content/images/tab-right.png);
+   width: 63px;
+   margin: 0px;
+   padding: 0px;
+}
+
+#main-tabs tab .tab-text {
+   width: 12em;
+   font-size: 12px;
+   padding-top: 8px;
+   padding-bottom: 5px;
+   color: rgb(50,50,50);
+}
+
+#main-tabs tab .tab-text-wrapper {
+   min-height: 30px;
+}
+
+#main-tabs tab[selected=true] {
+   height: 30px;
+}
+
+#main-tabs tab[selected=true] .left {
+   background-image: url(chrome://daisy/content/images/tab-selected-left.png);
+   width: 67px;
+}
+
+#main-tabs tab[selected=true] .middle {
+   background-image: url(chrome://daisy/content/images/tab-selected-middle.png);
+   width: 116px;
+}
+
+#main-tabs tab[selected=true] .right {
+   background-image: url(chrome://daisy/content/images/tab-selected-right.png);
+   width: 67px;
+}
+
+
+
+#main-tabs .tabs-left {
+   width: 0px;
+   -moz-box-flex: 0;
+}
+
+#main-tabs tabpanels {
+   margin-bottom: 0px;
+}
+
+#book-sidebar {
+   width: 100px;
+   background-color: white;
+}
+
+#status {
+   margin: 0px;
+   padding-top: 2px;
+}
+
+#logo {
+   margin-right: 10px;
+   text-align: center;
+   color: rgb(19,41,164);
+   margin-bottom: 5px;
+}
+
+#logo image {
+   width: 158px;
+   height: 26px;
+}
+
+#page-no {
+   padding: 0px;
+   margin: 0px;
+   margin-left: 20px;
+}
+
+#book-deck {
+   background-color: white;
+}
+
+.title {
+   font-size: 1.2em;
+   font-weight: bold;
+   padding-top: 0.5em;
+}
+
+.heading {
+   font-size: 1.1em;
+   font-weight: bold;
+   padding-top: 0.5em;
+}
+
+tree {
+   border: none;
+}
+
+treecols {
+   height: 0px;
+}
+
+
+#action-bar {
+   background-color: rgb(255,236,178);
+   margin-right: 5px;
+   margin: 0px;
+}
+
+#action-bar > hbox {
+}
+
+#action-bar .item {
+   padding-right: 5px;
+   padding-left: 5px;
+   vertical-align: middle;
+}
+
+#action-bar .separator {
+   border-right: 1px solid rgb(200,200,200);
+}
+
+.bookmark a {
+   padding-bottom: 7px;
+}
+
+#action-bar .item textbox {
+}
+
+#action-bar .item a:link {
+   display: block;
+   text-decoration: underline;
+}
+
+#book-menu {
+   min-width: 24em;
+   max-width: 24em;
+   overflow: hidden;
+}
+
+toolbarbutton:focus, tab:focus .tab-text {
+   border: 1px dotted grey;
+}
+
+#book-deck, #book-toc-deck {
+   -moz-user-focus: normal;
+}
+#book-menu-popup {
+   padding: 0px;
+   margin: 0px;
+}
+richlistbox {
+   border: 1px solid green;
+   padding: 0px;
+   margin: 0px;
+}
+
+richlistitem {
+   padding-left: 15px;
+   font-size: 1.2em;
+   border: none;
+}
+
+richlistitem.current {
+   background-image: url(chrome://global/skin/menu/menu-check.png);
+   background-repeat: no-repeat;
+}

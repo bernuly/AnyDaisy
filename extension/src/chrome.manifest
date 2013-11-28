@@ -1,0 +1,49 @@
+content	daisy	content/
+content	daisy-public	content/public/ contentaccessible=yes
+overlay	chrome://browser/content/browser.xul	chrome://daisy/content/overlay.xul
+
+locale	daisy	en-US	locale/en-US/
+
+skin	daisy	classic/1.0	skin/
+
+interfaces components/nsIDAISYHelper.xpt
+interfaces components/nsITTSCallback.xpt
+interfaces components/nsITTSEngine.xpt
+interfaces components/nsITTSEngineFactory.xpt
+interfaces components/nsITTSMediatorService.xpt
+
+component {38abb30a-73fe-4e3d-9154-30acb5474480} components/DAISYConverter.js
+contract @mozilla.org/streamconv;1?from=application/oebps-package+xml&to=*/* {38abb30a-73fe-4e3d-9154-30acb5474480}
+
+component {86aaefd3-4f84-4e34-a18d-33b00f32cc87} components/DAISYConverter.js
+contract @mozilla.org/streamconv;1?from=application/x-dtbncx+xml&to=*/* {86aaefd3-4f84-4e34-a18d-33b00f32cc87}
+
+component {d1150440-1cc4-460d-ab26-fb779520ca35} components/DAISYConverter.js
+contract @mozilla.org/streamconv;1?from=application/x-dtbook+xml&to=*/* {d1150440-1cc4-460d-ab26-fb779520ca35}
+
+component {4655c7a3-5675-4ce7-beb4-8dbcb00e7971} components/DAISY.js
+contract @benetech.org/daisy;1 {4655c7a3-5675-4ce7-beb4-8dbcb00e7971}
+
+component {34a3927a-d587-47dc-97ba-59ca4f252c4b} components/SMIL.js
+contract @benetech.org/daisy-smil-engine;1 {34a3927a-d587-47dc-97ba-59ca4f252c4b}
+
+component {f45d85fc-014d-4147-a6c8-a81c9b054ad6} components/TTSMediatorService.js
+contract @benetech.org/tts-mediator-service;1 {f45d85fc-014d-4147-a6c8-a81c9b054ad6}
+
+component {8667f289-ed59-4aaf-9111-b7aa88468cb5} components/DAISYHelper.js
+contract @benetech.org/daisy-helper {8667f289-ed59-4aaf-9111-b7aa88468cb5}
+
+component {ae9f0e64-9cce-43be-97bd-0cd15e31bb11} components/ESpeakTTSEngineFactory.js
+contract @benetech.org/tts-engine-factory;1?name=espeak {ae9f0e64-9cce-43be-97bd-0cd15e31bb11}
+
+component {ebe24c2b-866f-4835-ae01-8225e1b3c275} components/FestivalTTSEngineFactory.js
+contract @benetech.org/tts-engine-factory;1?name=festival {ebe24c2b-866f-4835-ae01-8225e1b3c275}
+
+component {b88dd184-14c1-4430-a6b1-3b71b31f7348} components/FreeTTSEngineFactory.js
+contract @benetech.org/tts-engine-factory;1?name=freetts {b88dd184-14c1-4430-a6b1-3b71b31f7348}
+
+binary-component platform/WINNT/components/sapitts.dll ABI=WINNT_x86-msvc
+binary-component platform/Darwin_x86-gcc3/components/mactts.dylib ABI=Darwin_x86-gcc3
+binary-component platform/Darwin_x86-gcc3/components/mactts.dylib ABI=Darwin_x86-64-gcc3
+
+category Javascript-global-constructor DAISYHelper @benetech.org/daisy-helper 

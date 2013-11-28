@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package PUBLIC "+//ISBN 0-9673008-1-9//DTD OEB 1.2 Package//EN" "http://openebook.org/dtds/oeb-1.2/oebpkg12.dtd">
+
+<package xmlns="http://openebook.org/namespaces/oeb-package/1.0/" unique-identifier="uid">
+  <metadata>
+    <dc-metadata xmlns:oebpackage="http://openebook.org/namespaces/oeb-package/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <dc:Publisher>Developer</dc:Publisher>
+      <dc:Title>Test</dc:Title>
+      <dc:Creator file-as="Org, Bookshare.">Bookshare. Org</dc:Creator>
+      <dc:Format>ANSI/NISO Z39.86-2005</dc:Format>
+      <dc:Date>2009-07-10</dc:Date>
+      <dc:Identifier id="uid" scheme="BKSH">Bookshare</dc:Identifier>
+    </dc-metadata>
+    <x-metadata>
+      <meta name="dtb:sourcePublisher" content="Bookshare.org" />
+      <meta name="DCTERMS.date.dateCopyrighted" content="2009" />
+      <meta name="Synopsis" content="Test Case" />
+      <meta name="Copyright" content="Bookshare.org" />
+    </x-metadata>
+  </metadata>
+  <manifest>
+    <item id="opf" href="test.opf" media-type="application/oebps-package+xml" />
+    <item id="xml" href="test.xml" media-type="application/x-dtbook+xml" />
+    <item id="ncx" href="test.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="smil" href="test.smil" media-type="application/smil+xml" />
+  </manifest>
+  <spine>
+    <itemref idref="smil" />
+  </spine>
+</package>
+

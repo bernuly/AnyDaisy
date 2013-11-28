@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://chrome://daisy/skin/default.css" type="text/css"?>
+<page id="controls" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="chrome://daisy Controls"
+   xmlns:h="http://www.w3.org/1999/xhtml" flex="1" onload="Controls.getInstance().init()">
+   <script type="application/x-javascript" src="chrome://chrome://daisy/content/DOMUtil.js"/>
+   <script type="application/x-javascript" src="chrome://chrome://daisy/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://chrome://daisy/content/Controls.js"/>
+   <groupbox id="addbook">
+      <caption label="Add a Book"/>
+      <grid flex="2">
+         <columns>
+            <column/>
+            <column flex="1"/>
+         </columns>
+         <rows>
+            <row>
+               <label value="Book:"/>
+               <hbox flex="1">
+                  <textbox id="filename" flex="2"/>
+                  <button flex="0" id="browse-file" label="Browse..." tooltiptext="Browse for book zip file." oncommand="Controls.getInstance().browseForFile()"/>
+               </hbox>
+            </row>
+          </rows>
+      </grid>
+      <button id="decode" label="Add" oncommand="Controls.getInstance().addBook()"/>
+   </groupbox>
+   <groupbox>
+       <caption label="Settings"/>
+       <grid>
+          <columns><column/><column/><column/></columns>
+          <rows>
+             <row align="top">
+       <hbox>
+       <radiogroup>
+          <radio id="galley-format" label="Galley"/>
+          <radio id="rendered-format" selected="true" label="Rendered"/>
+       </radiogroup>
+       </hbox>
+       <vbox>
+          <checkbox label="Sound?" checked="true" id="sound-checkbox"/>
+          <checkbox label="Highlight?" checked="true" id="highlight-checkbox"/>
+          <checkbox label="Select Text?" checked="false" id="selecttext-checkbox"/>
+          <checkbox label="Follow Position?" checked="false" id="focus-checkbox"/>
+          <checkbox label="TTS?" checked="false" id="tts-checkbox"/>
+       </vbox>
+       <vbox>
+         <checkbox label="Debug?" checked="false" id="debug-checkbox"/>
+         <checkbox label="Generate SMIL?" checked="false" id="generate-smil-checkbox"/>
+         <checkbox label="Allow Quirks?" checked="false" id="quirks-checkbox"/>
+       </vbox>
+             </row>
+          </rows>
+        </grid>
+        <hbox align="center"><label value="Highlight Time: "/><scale id="highlight-time" value="2" max="15" min="1"/><label id="highlight-time-display" value="2 seconds"/></hbox>
+        <hbox align="center"><textbox id='tts-test' size="50"/><button label="Speak" oncommand="Controls.getInstance().speak(document.getElementById('tts-test').value)"/><button label="Stop" oncommand="Controls.getInstance().stopSpeaking()"/></hbox>
+        <hbox align="center"><label id="tts-status" value="Not Speaking"/></hbox>
+   </groupbox>
+   <groupbox id="bookshelf" flex="4">
+      <caption label="Bookshelf"/>
+      <listbox id="booklist" flex="4">
+      </listbox>
+   </groupbox>
+   <button label="Unload Instance" oncommand="Components.classes['@benetech.org/chrome://daisy;1'].getService(Components.interfaces.nsISupports).wrappedJSObject.unload()"/>
+</page>

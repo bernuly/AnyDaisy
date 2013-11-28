@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build Tests" default="build" basedir=".">
+
+   <macrodef name="maketest">
+      <attribute name="number"/>
+      <sequential>
+       <delete file="test-@{number}.xml"/>
+       <delete file="test-@{number}.ncx"/>
+       <delete file="test-@{number}.smil"/>
+       <delete file="test-@{number}.opf"/>
+       <xslt in="src-@{number}.xml" out="test-@{number}.xml" style="../docs/dtbook-augment.xsl"/>
+       <xslt in="test-@{number}.xml" out="test-@{number}.ncx" style="../docs/dtbook2ncx.xsl">
+         <param name="href" expression="test-@{number}.smil"/>
+       </xslt>
+       <xslt in="test-@{number}.xml" out="test-@{number}.smil" style="../docs/dtbook2smil.xsl">
+         <param name="href" expression="test-@{number}.xml"/>
+       </xslt>
+       <xslt in="template.opf" out="test-@{number}.opf" style="opf.xsl">
+         <param name="number" expression="@{number}"/>
+       </xslt>
+      </sequential>
+   </macrodef>
+
+    <target name="build">
+       <maketest number='001'/>
+       <maketest number='002'/>
+       <maketest number='003'/>
+       <maketest number='004'/>
+       <maketest number='005'/>
+       <maketest number='006'/>
+       <maketest number='007'/>
+       <maketest number='008'/>
+    </target>
+
+</project>

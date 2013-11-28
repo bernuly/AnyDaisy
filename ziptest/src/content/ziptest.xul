@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://ziptest/skin/default.css" type="text/css"?>
+<page id="zipTest" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   title="Zip Test"
+   xmlns:h="http://www.w3.org/1999/xhtml" flex="1" onload="App.getInstance().init()">
+   <script type="application/x-javascript" src="chrome://ziptest/content/Settings.js"/>
+   <script type="application/x-javascript" src="chrome://ziptest/content/ZipExec.js"/>
+   <script type="application/x-javascript" src="chrome://ziptest/content/ZipTest.js"/>
+   <vbox id="main" flex="1">
+   <groupbox>
+      <caption label="File to Test"/>
+      <grid flex="2">
+         <columns>
+            <column/>
+            <column flex="1"/>
+         </columns>
+         <rows>
+            <row>
+               <label value="File:"/>
+               <hbox flex="1">
+                  <textbox id="filename" flex="2"/>
+                  <button id="browse-file" label="Browse..." tooltiptext="Browse for file." oncommand="App.getInstance().browseForFile()"/>
+               </hbox>
+            </row>
+            <row>
+               <label value="Directory:"/>
+               <hbox flex="1">
+                  <textbox id="directory" flex="2"/>
+                  <button id="browse-directory" label="Browse..." tooltiptext="Browse for output directory." oncommand="App.getInstance().browseForDirectory()"/>
+               </hbox>
+            </row>
+            <row>
+               <label value="Password:"/>
+               <hbox flex="1">
+                  <textbox id="password" flex="2"/>
+               </hbox>
+            </row>
+          </rows>
+      </grid>
+      <button id="decode" label="Extract" oncommand="App.getInstance().decode()"/>
+   </groupbox>
+<!--
+   <groupbox flex="2">
+      <caption label="Content"/>
+      <h:div id='content'/>
+   </groupbox>
+-->
+   </vbox>
+
+</page>

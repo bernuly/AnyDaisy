@@ -1,0 +1,15 @@
+#include "nsISupports.idl"
+
+/**
+ * A particular TTS implemenation
+ */
+[scriptable, uuid(48aad526-ee1f-4a02-a69f-5e60e4ceba7b)]
+interface nsITTSCallback : nsISupports
+{
+
+  /**
+   * notified when the speech stops
+   */
+  void onFinish(in boolean cancelled);
+
+};

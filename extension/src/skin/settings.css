@@ -1,0 +1,35 @@
+/* 
+    Document   : settings
+    Created on : Jan 27, 2009, 4:33:40 PM
+    Author     : alex
+    Description:
+        Style definitions for the settings dialogs.
+*/
+
+groupbox {
+   min-width: 46em;
+}
+
+column {
+   padding-left: 1em;
+}
+
+#row1, #row2, #row3 {
+   padding-bottom: 0.9em;
+}
+
+.settings-description {
+   margin-top: 15px;
+   margin-left: 15px;
+   margin-right: 15px;
+   margin-bottom: 10px;
+}
+
+.settings-checkbox {
+   margin-left: 15px;
+}
+
+.settings {
+   max-width: 200px;
+   padding: 5px;
+}
