@@ -1,14 +1,25 @@
-Building
---------
 
+Building  AnyDaisy.xpi
+-----------------------
 cd extension
 ant clean jar
-
-Installing in Firefox
----------------------
-
 File / open
 Browse to extension/dist
 Open daisy.1.N.N.YYYY.xpi
-Follow prompts
+
+
+
+
+ 	How to install
+--------------------------------
+ 1.Open Firefox
+ 2.File-->OpenFiles
+ 3.Browse for AnyDaisy.xpi
+ 4.Install
+ 5.Restart
+ 6.Tools->AnyDaisy
+ 7.Open a Daisy3 Book.
+
+
+
 
